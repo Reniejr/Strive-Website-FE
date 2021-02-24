@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Eva Deltor",
+        "job": "Data Scientist@ConnectThink",
+        "photo": "./assets/3.Testimonials/1.jpg",
+        "review": "Doing this AI bootcamp was one of my best decisions. I learned about machine learning, computer vision, NLP... but also about life, how to manage a project, how to confront a problem and about people from other parts of the world. I would recommend it to everyone, it's amazing!"
+    },
+    {
+        "name": "Nicholas Shaw",
+        "job": "Data Engineer@Mática Partners",
+        "photo": "./assets/3.Testimonials/2.jpg",
+        "review": "The course is an intense learning experience and you learn in proportion to the effort you put in. The instructors did a good job of giving the tools, resources, and guidance to learn core topics in ML. The support and coaching during the final project was also excellent. "
+    },
+    {
+        "name": "Nora Lama",
+        "job": "Associate Account Strategist@Google",
+        "photo": "./assets/3.Testimonials/3.jpg",
+        "review": "The thing that improved my knowledge the most was the learn-by-doing methodology. It doesn’t matter how much experience you have or even which background you are from if you really want to learn AI and are willing to work towards it."
+    },
+    {
+        "name": "Svanhvít Lilja Ingólfsdóttir",
+        "job": "Researcher@Reykjavik University",
+        "photo": "./assets/3.Testimonials/4.jpg",
+        "review": "It's amazing how much you can learn in a few months if the right people push you forward. It's hard, but so rewarding. I'm already noticing interest from potential employers. What I liked most was that they taught us foundations of ML like implementing algorithms from scratch."
+    },
+    {
+        "name": "David Collado",
+        "job": "Software Engineer@Bee the Data",
+        "photo": "./assets/3.Testimonials/5.jpg",
+        "review": "Even if you don’t know that much, you just have to go for it. There is no easy way but it will eventually get easier. It is a great atmosphere, you can find people from every kind of background doing this because it’s their passion."
+    }
+]

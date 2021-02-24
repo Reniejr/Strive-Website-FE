@@ -1,0 +1,99 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/General';
+#daily-schdeule{
+    padding: 8rem 0;
+    .container:nth-of-type(1){
+        position: relative;
+        margin-bottom: 6rem;
+        .row{
+            margin: 0;
+            .col-md-3{
+                h3{
+                    font-weight: 700;
+                    margin-bottom: 2rem;
+                    span{
+                        color: $primary;
+                        font-weight: 800;
+                        margin-right: .5rem;
+                    }
+                }
+                button{
+                    @include borderRadius(5px);
+                    border: none;
+                    font-size: 1.25rem;
+                    padding: 5px 10px;
+                    margin-right: 5px;
+                }
+            }
+            .col-md-9{
+                max-height: 60vh;
+                overflow-y: auto;
+                position: relative;
+                .row{
+                    margin: 0;
+                    margin-bottom: 2rem;
+                    .col-2{
+                        font-size: .9rem;
+                        color: rgba(0, 0, 0, .5);
+                    }
+                    .col-3{
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                    }
+                    .col-7{
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .shade{
+            content: ' ';
+            position: absolute;
+            z-index: 10;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.7) 50%);
+        }
+    }
+    .row{
+        margin: 0 2rem;
+        .col-lg-4{
+            h5:nth-of-type(1){
+                color: rgba(0, 0, 0, .5);
+            }
+        }
+        .col-lg-8{
+            display: flex;
+            flex-direction: column;
+            input{
+                width: 60vh;
+                height: 3rem;
+                margin-bottom: 1rem;
+                outline: none;
+                @include borderRadius(3px);
+                border: 2px solid rgba(0, 0, 0, 0.1);
+                padding: 5px 10px;
+                &:focus{
+                    box-shadow: 0px 0px 2px 2px $primary;
+                }
+            }
+            input:nth-of-type(2){
+                margin-bottom: 5rem;
+            }
+            button{
+                @include strive-btn();
+                background-color: #0d0e0e;
+                color: white;
+                &:hover{
+                    background-color: #0d0e0e;
+                    border: 4px solid #00c666;
+                    color: white;
+                }
+            }
+        }
+
+    }
+}

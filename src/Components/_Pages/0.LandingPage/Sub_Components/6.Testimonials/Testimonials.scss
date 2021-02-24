@@ -1,0 +1,53 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/CrossBrowser';
+#testimonials{
+    padding: 4rem 1rem;
+    background-color: #f1f1f1;
+    .container{
+        .row{
+            margin: 0;
+            .col-md-4{
+                h3{
+                    font-weight: 700;
+                    span{
+                        color: $primary;
+                        font-weight: 800;
+                        margin-right: .5rem;
+                    }
+                }
+                p{
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    font-family: 'EB Garamond', sans-serif;
+                    color: rgba(0, 0, 0, .5);
+                }
+            }
+            .col-md-8{
+                .row{
+                    margin: 0;
+                    // align-items: center;
+                    margin-bottom: 3rem;
+                    .col-2{
+                        img{
+                            width: 100px;
+                            height: 100px;
+                            @include filter(grayscale(90%));
+                        }
+                    }
+                    .col-10{
+                        font-family: 'EB Garamond', sans-serif;
+                        p:nth-of-type(1){
+                            font-size: 1rem;
+                            color: rgba(0, 0, 0, .5);
+                        }
+                        p:nth-of-type(2){
+                            font-style: italic;
+                            font-weight: 600;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

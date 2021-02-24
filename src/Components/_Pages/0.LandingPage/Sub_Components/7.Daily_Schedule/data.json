@@ -1,0 +1,77 @@
+[
+    {
+        "course" : "Web",
+        "schedule" : [
+            {
+                "time" : "9 - 1 PM",
+                "title" : "Lectures & Live Coding",
+                "topic" : "Join your class and get introduced to a new programming topic, asking anything you need to instructors."
+            },
+            {
+                "time" : "1 - 2 PM",
+                "title" : "Lunch",
+                "topic" : "Enjoy your food and take a nice break."
+            },
+            {
+                "time" : "2 - 3 PM",
+                "title" : "Exercises // Teacher QA",
+                "topic" : "Continue with exercises. Ask questions to the teacher if you get stuck with your group."
+            },
+            {
+                "time" : "3 - 5 PM",
+                "title" : "Exercises & 1-on-1s",
+                "topic" : "This is where Strivers are made. Continue to push and commit your code. Schedule 1 on 1s if you get stuck or need any other type of help."
+            },
+            {
+                "time" : "5 - 6 PM",
+                "title" : "Debrief",
+                "topic" : "Solutions to the daily exercises are posted and debriefed together. Great job! One day closer towards becoming a world-class developer."
+            },
+            {
+                "time" : "6 - 7 PM",
+                "title" : "(Optional) Talks",
+                "topic" : "Time to show the class what you've built. Regularly, there will be renowned industry leaders that will share their knowledge with us."
+            }
+        ]
+    },
+    {
+        "course" : "AI",
+        "schedule" : [
+            {
+                "time" : "9 - 11 AM",
+                "title" : "Lectures",
+                "topic" : "Join your class and get introduced to a new programming topic, asking anything you need to instructors."
+            },
+            {
+                "time" : "11 - 1 PM",
+                "title" : "Exercises",
+                "topic" : "Time to get your hands dirty! Start tackling the daily subject in pair with a classmate. Tutors are ready to get you unstuck any time you hit a block."
+            },
+            {
+                "time" : "1 - 2 PM",
+                "title" : "Launch",
+                "topic" : "Enjoy your food and take a nice break."
+            },
+            {
+                "time" : "2 - 3 PM",
+                "title" : "Exercises // Teacher QA",
+                "topic" : "Continue with exercises. Ask questions to the teacher if you get stuck with your group."
+            },
+            {
+                "time" : "3 - 5 PM",
+                "title" : "Exercises & 1-on-1s",
+                "topic" : "This is where Strivers are made. Continue to push and commit your code. Schedule 1 on 1s if you get stuck or need any other type of help."
+            },
+            {
+                "time" : "5 - 6 PM",
+                "title" : "Debrief",
+                "topic" : "Solutions to the daily exercises are posted and debriefed together. Great job! One day closer towards becoming a world-class developer."
+            },
+            {
+                "time" : "6 - 7 PM",
+                "title" : "(Optional) Talks",
+                "topic" : "Time to show the class what you've built. Regularly, there will be renowned industry leaders that will share their knowledge with us."
+            }
+        ]
+    }
+]
