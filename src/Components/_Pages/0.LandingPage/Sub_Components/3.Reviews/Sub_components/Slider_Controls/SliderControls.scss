@@ -1,0 +1,15 @@
+@import '../../../../../../_SASS/CrossBrowser';
+.slider-controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding: 5px 0;
+    .indicator{
+        content: ' ';
+        width: 10px;
+        height: 10px;
+        @include borderRadius(50%);
+        background-color: #fff;
+    }
+}

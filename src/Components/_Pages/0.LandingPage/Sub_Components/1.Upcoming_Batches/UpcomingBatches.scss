@@ -1,0 +1,50 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/CrossBrowser';
+#upcomingBatches{
+    min-height: 90vh;
+    background-image: url('./assets/backgr02.2.png');
+    background-size: 40% 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    padding: 4rem 0;
+    .container{
+        .row{
+            margin: 0;
+            .col-md-4:nth-of-type(1){
+                h3{
+                    font-weight: 700;
+                    span{
+                        color: $primary;
+                        font-weight: 800;
+                        margin-right: .5rem;
+                    }
+                }
+            }
+            .col-md-4:nth-of-type(2), .col-md-4:nth-of-type(3){
+                padding: 0 4rem;
+                .card{
+                    width:110px;
+                    height:110px;
+                    padding: 1rem;
+                    @include borderRadius(20px);
+                    margin-bottom: 2rem;
+                    p{
+                        font-size: 1.4rem;
+                        margin: 0;
+                    }
+                    h2{
+                        font-size: 3.5rem;
+                        line-height: 1;
+                    }
+                }
+                h5{
+                    font-weight: 600;
+                }
+                p:nth-of-type(2){
+                    color: rgba(0, 0, 0, .5);
+                }
+            }
+            .col-md-4:nth-of-type(3){}
+        }
+    }
+}

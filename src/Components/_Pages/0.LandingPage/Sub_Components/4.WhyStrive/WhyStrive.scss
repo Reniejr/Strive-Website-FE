@@ -1,0 +1,56 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/General';
+#why-strive{
+    min-height: 100vh;
+    background-color: #0d0e0e;
+    padding: 4rem 0;
+    .section-description{
+        max-width: 500px;
+        margin-bottom: 4rem;
+        h3{
+            font-weight: 700;
+            color: #fff;
+            span{
+                color: $primary;
+                font-weight: 800;
+                margin-right: .5rem;
+            }
+        }
+        p{
+            color: rgba(255, 255, 255, .5);
+            font-size: 1.5rem;
+            line-height: 1.25;
+            font-family: 'EB Garamond', sans-serif;
+            font-weight: 500;
+        }
+    }
+    .container{
+        .row{
+            margin: 0;
+            .col-sm-6, .col-lg-4{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img{
+                    width: 80px;
+                    height: 80px;
+                    margin-bottom: 2rem;
+                }
+                h3{
+                    color: $primary;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    color: #fff;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+    button{
+        margin-left: 37%;
+        margin-top: 4rem;
+        @include strive-btn();
+    }
+}

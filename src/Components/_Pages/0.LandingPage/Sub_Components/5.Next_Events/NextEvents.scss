@@ -1,0 +1,39 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/General';
+#next-events{
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    h3{
+        font-weight: 700;
+            span{
+                color: $primary;
+                font-weight: 800;
+                margin-right: .5rem;
+            }
+    }
+    .event{
+        padding: 1rem 1rem;
+        .row{
+            margin: 0;
+            align-items: center;
+            .event-name{
+                padding-right: 5rem;
+                .header, .sub-title{
+                    font-size: 1.1rem;
+                    color: rgba(0, 0, 0, .5);
+                }
+                .title{
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+            }
+            button{
+                @include strive-btn();
+                width: 250px;
+                &:hover{
+                    color: black;
+                }
+            }
+        }
+    }
+}

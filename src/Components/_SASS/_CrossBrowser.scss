@@ -18,3 +18,11 @@
     -ms-transition: $transition;
     -o-transition: $transition;
 }
+
+@mixin transform($transforms){
+    transform: $transforms;
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    -o-transform: $transforms;
+}

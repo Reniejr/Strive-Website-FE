@@ -15,9 +15,10 @@
         background-image: url('./assets/banner.jpg');
         background-size: cover;
         background-position: 30% top;
+        background-repeat: no-repeat;
     }
     header{
-        height: 4rem;
+        height: 3.5rem;
         margin: 0 3rem;
         margin-bottom: 2rem;
         img{
@@ -25,6 +26,7 @@
         }
     }
     .container{
+        padding: 0 3rem;
         h1{
             color: #fff;
             font-family: 'EB Garamond', sans-serif;
