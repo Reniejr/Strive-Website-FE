@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Hours of code",
+        "strive": { "n": "+1000", "s":null},
+        "university": { "n": "400", "s":null},
+        "bootcamp": { "n": "400", "s":null}
+    },
+    {
+        "title": "Commitment",
+        "strive": { "n": "6-9", "s":"months"},
+        "university": { "n": "4", "s":"years"},
+        "bootcamp": { "n": "9-12", "s":"weeks"}
+    },
+    {
+        "title": "Total cost",
+        "strive":  {"n": "10%", "s":"30 months"},
+        "university":  {"n": "80-150k", "s":null},
+        "bootcamp": { "n": "5-15k", "s":"upfront"}
+    }
+]

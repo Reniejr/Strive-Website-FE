@@ -24,14 +24,14 @@ export default function Testimonials() {
             </p>
           </Col>
           <Col md={8}>
-            {testimonials.map((person) => {
+            {testimonials.map((person, index) => {
               return (
-                <div className="testimonial">
+                <div className="testimonial" key={index}>
                   <Row>
-                    <Col xs={2}>
+                    <Col lg={2}>
                       <img src={person.photo} alt="" />
                     </Col>
-                    <Col xs={10}>
+                    <Col lg={10}>
                       <p>{person.review}</p>
                       <p>
                         -{person.name} ({person.job})

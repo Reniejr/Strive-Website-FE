@@ -42,9 +42,9 @@ export default function DailySchdeule() {
             </button>
           </Col>
           <Col md={9}>
-            {schedules[course].schedule.map((schedule) => {
+            {schedules[course].schedule.map((schedule, index) => {
               return (
-                <div className="schedule">
+                <div className="schedule" key={index}>
                   <Row>
                     <Col xs={2}>{schedule.time}</Col>
                     <Col xs={3}>{schedule.title}</Col>

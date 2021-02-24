@@ -1,0 +1,49 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/CrossBrowser';
+#strive-difference{
+    background-color: #0d0e0e;
+    padding: 6rem 0;
+    .container{
+        .row{
+            margin: 0;
+            .col-lg-4{
+                h3{
+                    font-weight: 700;
+            color: #fff;
+            span{
+                color: $primary;
+                font-weight: 800;
+                margin-right: .5rem;
+            }
+                }
+            }
+            .col-lg-8{
+                table{
+                    width: 100%;
+                    tr{
+                        th{
+                            height: 10vh;
+                        }
+                        td{
+                            height: 20vh;
+                            color: #fff;
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            min-width: 150px;
+                            p{
+                                margin: 0;
+                                text-align: center;
+                            }
+                            p:nth-of-type(2){
+                                font-size: 1rem;
+                            }
+                        }
+                        td:nth-of-type(2){
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -17,9 +17,9 @@ export default function NextEvents() {
       </h3>
       <br />
       <hr />
-      {events.map((event) => {
+      {events.map((event, index) => {
         return (
-          <div className="event">
+          <div className="event" key={index}>
             <Row>
               <Col md={3} className="event-name">
                 <div className="header">{event.days}</div>
