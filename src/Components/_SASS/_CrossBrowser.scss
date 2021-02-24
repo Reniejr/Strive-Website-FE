@@ -1,0 +1,20 @@
+@mixin filter($filters) {
+    filter: $filters;
+    -webkit-filter: $filters;
+}
+
+@mixin borderRadius($radius){
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+@mixin transition($transition){
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+}

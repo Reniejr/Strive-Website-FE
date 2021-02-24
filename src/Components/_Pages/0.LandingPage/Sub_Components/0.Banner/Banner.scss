@@ -1,0 +1,55 @@
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/General';
+
+.banner{
+    min-height: 100vh;
+    position: relative;
+    padding: 3rem 0;
+    .banner-img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        @include filter(brightness(70%));
+        background-image: url('./assets/banner.jpg');
+        background-size: cover;
+        background-position: 30% top;
+    }
+    header{
+        height: 4rem;
+        margin: 0 3rem;
+        margin-bottom: 2rem;
+        img{
+            height: 100%;
+        }
+    }
+    .container{
+        h1{
+            color: #fff;
+            font-family: 'EB Garamond', sans-serif;
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: .5rem;
+            max-width: 372px;
+            span{
+                font-weight: 700;
+            }
+        }
+        div{
+            margin: 3rem 0;
+            color: #fff;
+            font-size: 22px;
+            p{
+                margin: 0;
+                font-weight: 500;
+            }
+            p:nth-of-type(2){
+                font-weight: 700;
+            }
+        }
+        button{
+            @include strive-btn();
+        }
+    }
+}
