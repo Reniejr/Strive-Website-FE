@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Klevin B.",
+        "reviews": "How I found Strive? I was always searching for coding boot camps,  I came across a lot of them but on most of them, I had to pay an expensive price. At that moment I couldn't afford these courses. While searching I found STRIVE website and while looking on their website I saw the stack that they were working on. The course was focused on MERN stack and we would start from the begging with all technologies inc HTML, CSS, JS, React, Express, Node, MongoDB, etc. And the most important part was that they were not asking for any payment in the beginning. All they were looking for was talented and hardworking people that had a dream to become full-stack developers. With the amazing tutors that were so helpful during the whole course, I managed to bring my programming skill to another level. And this was just the beginning for me because with all those skills that I got during this boot camp I was able to land a job 1 month after I graduated. This is why I said on the title 'Achieving my dream with STRIVE' because I did. I was able to land a job in the country that I wanted to live in and to be able to work on something that I enjoyed.",
+        "stars": 5,
+        "photo": "./assets/Reviews/strive_team_KLEVIN.jpg",
+        "link":"https://www.coursereport.com/schools/strive-school?shared_review=31818#reviews"
+    },
+    {
+        "name": "Jeff O.",
+        "reviews": "Before joining Strive, the only thing I could do was copy and plug WYSIWYG applications, and didn't understand what is behind the functionalities. Learning with Strive was quite an excruciating and intense experience. Imagine staying up from 8 - 6 pm every day for several months learning new technologies and simulating real-life applications?!  It was so intense and rewarding that now I am employed, it feels like a repetition of my days with Strive.  The tutors are always ready to help you out and support you at fullest. Regardless of my masters in Business, I am gainfully employed as a Full-stack developer courtesy of Strive.",
+        "stars": 5,
+        "photo": "./assets/Reviews/strive_team_JEFF.jpg",
+        "link":"https://www.coursereport.com/schools/strive-school?shared_review=28432#reviews"
+    },
+    {
+        "name": "Nathalie M.",
+        "reviews": "I must say that I entered Strive School with high expectations since all the tutors have strong solid backgrounds. Now that my batch has finished, it is safe to say that Strive School exceeded my expectations. The curriculum focuses on MERN stack, javascript, HTML, CSS, and bootstrap but also touches other subjects like PostgresSQL and cloud computing. It is well-organized as it balances the equation of theory and practice. Tutors are proficient with their topics, and they assist students until ideas are clear. The whole team is the student's number one supporter until the last minute. So, you can be sure that you will finish with a clean and solid understanding of the mentioned skills. A good tutor is the one that inspires, and this is where Strive School stands out. They teach you that choosing to be a developer means constant learning and searching, so they train the student on those skills. They focus on the student's confidence and ability to communicate by having the chance to ask questions during live lessons & one on ones and doing teamwork along with pair programming. I highly recommend this school as it has the best team and values.",
+        "stars": 5,
+        "photo": "./assets/Reviews/strive_team_NATHALIE.jpg",
+        "link":"https://www.coursereport.com/schools/strive-school?shared_review=29128#reviews"
+    },
+    {
+        "name": "Oksana S.",
+        "reviews": "If you have no tech background and you think it's not within your power to become a full-stack developer? Strive school will dispel your doubts. I entered this holy place:) with no tech background and now have a decent understanding of frontend and backend stack technologies. Moreover, I can create cool web applications and share my skills and knowledge with others. Strive school is a brilliant opportunity to change your life! And I assure you that every student can succeed with the help of awesome tutors in Strive. They are amazing! 24/7 support and readiness to explain anything till you understand what you intend to.",
+        "stars": 5,
+        "photo": "./assets/Reviews/strive_team_OKSANA.jpg",
+        "link":"https://www.coursereport.com/schools/strive-school?shared_review=29181#reviews"
+    },
+    {
+        "name": "Tetiana Y.",
+        "reviews": "I was on the track of a career-change from being an English teacher to becoming a web developer when I entered Strive. As a sophomore of Computer Science  I can tell that joining Strive was the best decision I've made. For seven months  at Strive I've learned and coded many times more than for two years at university. I entered with little knowledge of web  and came out as a full stack web developer. It's an intense program which requires dedication and focus. It's not a secret that coding is hard and stressful. But at Strive daily solo or team assignments with hands-on projects  right after morning live coding lectures get you so involved that challenge and stress turns into passion. Now when I graduated from Strive I feel like i can learn anything when it comes to coding. Not only the tutors teach you how to code,  the best practices, most popular  frameworks and web technologies but they teach you how to learn coding yourself. They are there to assist you long hours and just one call away. Another huge thing about Strive is that you pay only after you get hired! And a great deal of time is dedicated to job hunting and your personal brand which they  approach the same meticulous way as teaching you to code. They put a lot of efforts into forming you as a successful full-stack developer.  I recommend Strive school to anyone who strives to become a web developer!",
+        "stars": 5,
+        "photo": "./assets/Reviews/strive_team_TETIANA.jpg",
+        "link":"https://www.coursereport.com/schools/strive-school?shared_review=29559#reviews"
+    },
+    {
+        "name": "Ervins Z.",
+        "reviews": "I joined Strive school's 6 month MERN stack course with no prior experience in programming. The course completely exceeded my expectations - the level of support provided by tutors and fellow classmates was exceptional. All of the teachers are amazing and bring a unique set of skills to the table. What I enjoyed the most was that Strive does not only teach coding, but also put major emphases on harnessing soft skills, learning how to work in a team and how to brand/present yourself - all the things needed to be able to actually get a job and work in a professional environment. After recently getting hired I can say from my experience that teaching methodologies used in Strive School work 100%. Getting paid for a skill you knew nothing about 6 months ago is kind of unbelievable, but that's how good they are at preparing software developers. Not to sound too dramatic, but joining Strive School has been on of the best decisions I've ever made :)",
+        "stars": 5,
+        "photo": "./assets/Reviews/strive_team_ERVINS.jpg",
+        "link":"https://www.coursereport.com/schools/strive-school?shared_review=30081#reviews"
+    },
+    {
+        "name": "Ubeyt D.",
+        "reviews": "When I came across Strive school, I was already a stem (science, technology, engineering, and math) student as a software engineer student. However, I was also deeply aware of the problem of not catching up with the industry in schools. Because as a software engineer student, I was following the companies and the technologies they used. In this sense, schools train software developers that are insufficient for the industry, both as a technical stack and as a practical skill. And they are expensive. That is why the industry makes its own training programs or trains employees first with low wages even after student's graduation after all the money spent. Strive solves this problem, by standing at the student side! That being the case, when I saw the Strive School student announcement, I never thought about it twice and  I joined it. Because you don't pay until you're hired! A very convincing offer. At the end of 6 months of intensive training, I can say that I joined Strive as a student, but already became a part of the family. They have warm, understanding teachers and administrators, and I am grateful to all of them and also for everything that they taught to me.",
+        "stars": 5,
+        "photo": "./assets/Reviews/strive_team_UBEYT.jpg",
+        "link":"https://www.coursereport.com/schools/strive-school?shared_review=29404#reviews"
+    }
+]

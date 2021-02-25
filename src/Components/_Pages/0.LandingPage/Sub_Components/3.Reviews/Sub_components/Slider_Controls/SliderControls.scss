@@ -11,5 +11,6 @@
         height: 10px;
         @include borderRadius(50%);
         background-color: #fff;
+        margin: 0 .5rem;
     }
 }
