@@ -3,6 +3,9 @@ import React from "react";
 //DATA IMPORTS
 import data from "./data.json";
 
+//PERSONAL COMPONENTS IMPORTS
+import ShowCase from "./Sub_Components/Showcase/ShowCase";
+
 //BOOTSTRAP IMPORTS
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -12,6 +15,7 @@ import "./StriveDifference.scss";
 export default function StriveDifference() {
   return (
     <section id="strive-difference">
+      <img src="./assets/backgr03.png" alt="" className="bg-img"></img>
       <Container>
         <Row>
           <Col lg={4}>
@@ -23,9 +27,21 @@ export default function StriveDifference() {
             <table>
               <tr>
                 <th></th>
-                <th>strive</th>
-                <th>university</th>
-                <th>bootcamp</th>
+                <th>
+                  <img
+                    src="./assets/4.StriveDifference/strive_logo02.png"
+                    alt=""
+                  />
+                </th>
+                <th>
+                  <img
+                    src="./assets/4.StriveDifference/university.png"
+                    alt=""
+                  />
+                </th>
+                <th>
+                  <img src="./assets/4.StriveDifference/bootcamp.png" alt="" />
+                </th>
               </tr>
               {data.map((school, index) => {
                 return (
@@ -55,6 +71,8 @@ export default function StriveDifference() {
             </table>
           </Col>
         </Row>
+        <ShowCase />
+        <button className="strive-btn">Apply Now</button>
       </Container>
     </section>
   );

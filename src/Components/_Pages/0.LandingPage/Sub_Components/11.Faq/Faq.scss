@@ -1,0 +1,47 @@
+@import '../../../../_SASS/General';
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/Positions';
+
+#faq{
+    padding: 5rem 0;
+    .container{
+        .row{
+            margin: 0;
+            .col-lg-4{
+                h3{
+                    font-weight: 700;
+                    span{
+                        color: $primary;
+                        font-weight: 800;
+                        margin-right: .5rem;
+                    }
+                }
+            }
+            .col-lg-8{
+                padding-left: 3rem;
+                .q_a{
+                    overflow-y: hidden;
+                    @include transition(all .5s ease-in-out);
+                    span{
+                        cursor: pointer;
+                        font-size: 1.25rem;
+                        display: flex;
+                        align-items: center;
+                        .fas{
+                            font-size: 2.5rem;
+                            font-weight: 800;
+                            margin-right: 2rem;
+                        }
+                    }
+                    .answer{
+                        width: 80%;
+                        margin: 2rem auto;
+                        padding-left: 2rem;
+                        font-size: .95rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+[
+    {
+        "q":"How much does it cost?",
+        "a":"Strive School has no initial cost for the student, it's based on an Income Share Agreement model, consisting of 10% of your gross salary, for 30 months (max 9.990 €). There's however a small processing fee for UK Students of 250£ which is refundable in case of dropping out the course within 4 weeks. You can read the full contract here "
+    },
+    {
+        "q":"How does it work?",
+        "a":"Strive School is a fully remote course that you can take from wherever you are. We require full time commitment, since every day we're gonna have lectures or activities together."
+    },
+    {
+        "q":"Is it only a Tech training?",
+        "a":"Not really. Part of the training involves Agile Methodologies (such Scrum), Pair Programming, Peer Learning and a lot of Teamwork."
+    },
+    {
+        "q":"What do you mean by full commitment?",
+        "a":"Typically, our days begin at 9AM and end around 6PM, Berlin time."
+    },
+    {
+        "q":"Where is Strive School based?",
+        "a":"We are operating out of Berlin, but our classes are online."
+    },
+    {
+        "q":"Do you help with hiring?",
+        "a":"Yes. We provide career coaching, interview preparation, mentorship and guidance and facilitate introductions through our network."
+    },
+    {
+        "q":"Do you provide a computer?",
+        "a":"We currently don't provide a computer to our students."
+    },
+    {
+        "q":"What type of certificate do you provide?",
+        "a":"We provide a certificate of completion."
+    },
+    {
+        "q":"Are you an accredited institution?",
+        "a":"No, we are not an accredited institution."
+    },
+    {
+        "q":"Who are you?",
+        "a":"We're on a mission to nurture the next generation of Web & AI Engineers in Europe. We're a multidisciplinary team of engineers and creative who are passionate about education and we are fortunately supported by organisations such as Y Combinator."
+    },
+    {
+        "q":"Who is supporting you?",
+        "a":"We are backed by investors such as Tim Draper (Hotmail, Skype, Tesla, SpaceX) and Y Combinator - investor in Stripe, AirBnb, Dropbox and other tens of successful tech companies from Silicon Vallley and all over the world. Alongside them, we're backed by angel investors from all the top tier companies such Google, Microsoft, Apple and new established players like Hootsuite or Datadog."
+    }
+]

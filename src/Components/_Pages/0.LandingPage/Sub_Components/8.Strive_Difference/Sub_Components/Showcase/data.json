@@ -1,0 +1,22 @@
+[
+    {
+        "course": "AI",
+        "icons": [
+            "./assets/5.StackIcons/python-logo.png",
+            "./assets/5.StackIcons/scikit_learn_sm.png",
+            "./assets/5.StackIcons/jupiter.png",
+            "./assets/5.StackIcons/tensorflow_logo.png",
+            "./assets/5.StackIcons/pytorch-logo.png"
+        ]
+    },
+    {
+        "course": "Full Stack",
+        "icons": [
+            "./assets/5.StackIcons/html5.png",
+            "./assets/5.StackIcons/css3.png",
+            "./assets/5.StackIcons/react-ico.png",
+            "./assets/5.StackIcons/nodejs.png",
+            "./assets/5.StackIcons/GitHub.png"
+        ]
+    }
+]

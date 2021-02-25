@@ -1,0 +1,40 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/Positions';
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/General';
+
+#admission-process{
+    padding: 10rem 0;
+    .container{
+        .row{
+            margin: 0;
+            .col-lg-4{
+                h3{
+                    font-weight: 700;
+                    span{
+                        color: $primary;
+                        font-weight: 800;
+                        margin-right: .5rem;
+                    }
+                }
+            }
+            .col{
+                padding-right: 2rem;
+                p:nth-of-type(1){
+                    font-size: 1.2rem;
+                    margin: 0;
+                }
+                h3{
+                    font-size: 3.5rem;
+                    color: $primary;
+                    margin-bottom: 5rem;
+                }
+                p:nth-of-type(2){
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+    }
+}

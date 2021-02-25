@@ -1,0 +1,17 @@
+[
+    {
+        "n": "01",
+        "title": "Fill the Form",
+        "description": "Fill the application form. You can impress us with a great background or motivation and will power to become a web developer or AI engineer."
+    },
+    {
+        "n": "02",
+        "title": "Take the Quiz",
+        "description": "Take our benchmark to assess your current level in HTML, CSS, JavaScript & Computer Science (for Full Stack) or Math, Python and Computer Science (for AI)"
+    },
+    {
+        "n": "03",
+        "title": "1-1 Quiz Review",
+        "description": "The final stage. You're going to discuss your project with Teaching Partner in a Zoom call. We'll send you a link where you can book a slot for your interview."
+    }
+]

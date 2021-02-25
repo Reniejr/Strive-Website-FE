@@ -1,0 +1,23 @@
+@import '../../../../_SASS/General';
+
+#join-discord{
+    padding: 5rem 0;
+    background-color: black;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            width: 80%;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto;
+            color: white;
+        }
+        button{
+            @include strive-btn();
+            margin-top: 2rem;
+        }
+    }
+}
