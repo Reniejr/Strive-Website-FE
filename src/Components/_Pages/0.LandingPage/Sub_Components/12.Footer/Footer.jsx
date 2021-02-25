@@ -18,10 +18,12 @@ export default function Footer() {
           </Col>
           <Col lg={4}>
             <span></span>
-            <a href="">Privacy Policy | GDPR</a>
-            <a href="">Impressum</a>
-            <a href="">Blog</a>
-            <a href="">Ignite</a>
+            <a href="https://www.iubenda.com/privacy-policy/80619350/full-legal">
+              Privacy Policy | GDPR
+            </a>
+            <a href="https://strive.school/impressum">Impressum</a>
+            <a href="https://strive.school/blog">Blog</a>
+            <a href="https://strive.school/ignite">Ignite</a>
           </Col>
           <Col lg={4}>
             <p>Backed by</p>
