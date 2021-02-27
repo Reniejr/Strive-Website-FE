@@ -1,0 +1,117 @@
+@import '../../_SASS/CrossBrowser';
+@import '../../_SASS/Colors';
+@import '../../_SASS/General';
+@import '../../_SASS/Positions';
+.loader{
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 300;
+    .circle{
+        content: " ";
+        width: 190px;
+        height: 190px;
+        @include borderRadius(50%);
+        @include absoluteCentered();
+        border: 1px solid $primary;
+        @include animation(circle-wide 4s linear infinite);
+        box-shadow: 0 0 10px 1px $primary;
+    }
+    .ray{
+        content: " ";
+        width: 490px;
+        height: 490px;
+        @include borderRadius(50%);
+        @include absoluteCentered();
+        border: 1px solid $primary;
+        @include animation(ray 4s linear infinite);
+        box-shadow: 0 0 10px 1px $primary;
+        opacity: 0;
+    }
+    .ray:nth-of-type(2){
+        width: 530px;
+        height: 530px;
+        animation-delay: .2s;
+    }
+    .strive-loader{
+        @include absoluteCentered();
+        rotate: 120deg;
+        @include animation(loader-anim 4s linear infinite);
+        animation-delay: 2s;
+        img{
+            @include absoluteCentered();
+        }
+        img:nth-of-type(1){
+            @include animation(left-side 4s linear infinite);
+        }
+        img:nth-of-type(2){
+            @include animation(right-side 4s linear infinite);
+        }
+    }
+}
+
+@keyframes loader-anim{
+    0%{rotate: 0deg}
+    80%{rotate: 0deg}
+    90%{}
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes left-side{
+    0%{}
+    20%{
+        margin-left: -5rem;
+        margin-top: -5rem;
+    }
+    40%{margin-left: -5rem;
+        margin-top: -5rem;}
+    50%{margin: 0;}
+    100%{
+        margin: 0;
+    }
+}
+@keyframes right-side{
+    0%{}
+    20%{
+        margin-left: 5rem;
+        margin-top: 5rem;
+    }
+    40%{margin-left: 5rem;
+        margin-top: 5rem;}
+    50%{margin: 0;}
+    100%{
+        margin: 0;
+    }
+}
+
+@keyframes circle-wide{
+    0%{}
+    20%{
+        // @include transform(scale(2));
+        width: 450px;
+        height: 450px;
+    }
+    30%{
+        // @include transform(scale(2));
+        width: 450px;
+        height: 450px;
+    }
+    50%{
+        width: 190px;
+        height: 190px;
+    }
+    100%{}
+}
+@keyframes ray{
+    0%{opacity: 0;}
+    20%{opacity: 0}
+    30%{opacity: 1;}
+    35%{opacity: 1;}
+    40%{opacity:0}
+    100%{opacity: 0;}
+}

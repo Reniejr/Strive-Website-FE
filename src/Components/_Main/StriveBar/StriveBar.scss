@@ -1,0 +1,16 @@
+@import '../../_SASS/Colors';
+@import '../../_SASS/CrossBrowser';
+
+#strive-bar{
+    padding: 10px 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    color: #fff;
+}

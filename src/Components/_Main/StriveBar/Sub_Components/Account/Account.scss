@@ -1,0 +1,44 @@
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/Colors';
+
+.account{
+    .account-container{
+        display: flex;
+        align-items: center;
+        span{
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            &:hover{
+                color: $primary;
+            }
+        }
+        span:nth-of-type(1){
+            border-right: 2px solid white;
+        }
+        span:nth-of-type(2){
+            margin-right: 2rem;
+        }
+        button{
+            @include borderRadius(5px);
+            margin-right: 1rem;
+            font-size:1rem;
+            border: none;
+            padding: 5px 15px;
+            font-weight: 600;
+            color: black;
+            background-color: $primary;
+            &:hover{
+                border: 2px solid $primary;
+                color: white;
+                background-color: transparent;
+            }
+        }
+        img{
+            width: 50px;
+            height: 50px;
+            @include borderRadius(50%);
+        }
+    }
+}

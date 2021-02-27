@@ -26,3 +26,8 @@
     -ms-transform: $transforms;
     -o-transform: $transforms;
 }
+
+@mixin animation($animations){
+    animation: $animations;
+    -webkit-animation: $animations;
+}
