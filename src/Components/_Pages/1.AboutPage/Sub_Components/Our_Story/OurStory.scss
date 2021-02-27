@@ -1,5 +1,91 @@
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/Positions';
+@import '../../../../_SASS/Colors';
 #our-story{
     position: relative;
     min-height: 100vh;
-    
+    margin-top: 4.5rem;
+    background-image: url('./assets/backgr02.2.png');
+    background-size: 40% 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    h3{
+        margin: 0 2rem;
+        font-weight: 700;
+            span{
+                color: $primary;
+                font-weight: 800;
+                margin-right: .5rem;
+            }
+    }
+    .container{
+        @include absoluteCentered();
+        // max-width: 0px;
+        height: 90%;
+        overflow: hidden;
+        @include animation(content 1s linear);
+        .row{
+            margin: 0;
+            height: 100%;
+            .col{
+                height: 100%;
+                .entrance-anim{
+                    position: relative;
+                    display: flex;
+                    height: 100%;
+                    .our-story-content{
+                        max-width: 70%;
+                        max-height: 60%;
+                        overflow-y: auto;
+                        margin: auto auto;
+                        font-size: 1.25rem;
+                        font-weight: 500;
+                    }
+                    img{
+                        position: absolute;
+                    }
+                    img:nth-of-type(1){}
+                    img:nth-of-type(2){
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    .strive-anim{
+        @include absoluteCentered();
+        img{
+            @include absoluteCentered();
+        }
+        img:nth-of-type(1){
+            margin-top: -15rem;
+            margin-left: -30rem;
+            opacity: 0;
+            @include animation(left-side 1s linear);
+        }
+        img:nth-of-type(2){
+            margin-top: 15rem;
+            margin-left: 30rem;
+            opacity: 0;
+            @include animation(right-side 1s linear);
+        }
+    }
+}
+
+@keyframes right-side{
+    0%{margin: 0; opacity: 1;}
+    50%{margin: 0;opacity: 1;}
+    100%{margin-top: 15rem; margin-left: 30rem;}
+}
+@keyframes left-side{
+    0%{margin: 0;opacity: 1;}
+    50%{margin: 0;opacity: 1;}
+    100%{margin-top: -15rem; margin-left: -30rem;}
+}
+@keyframes content{
+    0%{max-width: 0px;}
+    50%{max-width: 0px; opacity: 0;}
+    90%{opacity: 0}
+    100%{max-width: auto;}
 }

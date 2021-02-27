@@ -1,0 +1,25 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/CrossBrowser';
+#our-staff{
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    background-image: url('./assets/backgr03.png');
+    background-repeat: no-repeat;
+    background-size: 100% 170%;
+    padding: 4.5rem 0;
+    h3{
+        font-weight: 700;
+            span{
+                color: $primary;
+                font-weight: 800;
+                margin-right: .5rem;
+            }
+    }
+    .row{
+        margin: 2rem 0;
+        .school-staff{
+            margin: 2rem 0;
+        }
+    }
+}
