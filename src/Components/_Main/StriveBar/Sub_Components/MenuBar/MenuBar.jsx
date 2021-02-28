@@ -77,18 +77,13 @@ export default function MenuBar() {
               About Us
               <ul className="sublist-list">
                 <li>
-                  <HashLink to="/about/#our-story-title" smooth={true}>
+                  <HashLink to="/about/#about-page" smooth={true}>
                     Our Story
                   </HashLink>
                 </li>
                 <li>
                   <HashLink to="/about/#our-staff" smooth={true}>
                     Our Staff
-                  </HashLink>
-                </li>
-                <li>
-                  <HashLink to="/about/#our-sponsor" smooth={true}>
-                    Our Sponsor
                   </HashLink>
                 </li>
               </ul>

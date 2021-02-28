@@ -26,7 +26,13 @@ export default function StaffCard(props) {
 
   const onMove = (e) => {
     const xAxis = (window.innerWidth / 2 - e.pageX) / props.flexibility;
-    const yAxis = (window.innerHeight / 2 - e.pageY) / props.flexibility;
+    // const yAxis = (window.innerHeight / 2 - e.pageY) / props.flexibility;
+    // console.log(
+    //   (window.innerHeight / 2 - e.pageY) / props.flexibility,
+    //   window.innerHeight,
+    //   e.pageY
+    // );
+    const yAxis = -30;
     setMove({ ...move, xAxis: xAxis, yAxis: yAxis });
   };
 

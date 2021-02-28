@@ -1,0 +1,29 @@
+@import '../../_SASS/Colors';
+@import '../../_SASS/CrossBrowser';
+@import '../../_SASS/General';
+@import '../../_SASS/Positions';
+#login-page{
+    overflow:hidden;
+    #login{
+        @include absoluteCentered();
+        @include borderRadius(5px);
+        // background-color: black;
+        backdrop-filter: blur(5px);
+        color: #fff;
+        padding: 1rem;
+        header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            padding: 1rem;
+            img{
+                width: 70px;
+                height: 70px;
+                @include borderRadius(50%);
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

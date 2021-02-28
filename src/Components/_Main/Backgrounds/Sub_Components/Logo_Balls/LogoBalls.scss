@@ -1,0 +1,41 @@
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/Positions';
+.logo-balls{
+    width: 1rem;
+    height: 1rem;
+    @include borderRadius(50%);
+    position: absolute;
+    img{
+        position: absolute;
+    width: 1rem;
+    height: 1rem;
+    @include borderRadius(50%);
+    }
+    .ball-ray{
+        content:' ';
+        @include borderRadius(50%);
+        @include absoluteCentered();
+        width: 1.2rem;
+        height: 1.2rem;
+        opacity: 0;
+        border: 1px solid $primary;
+        box-shadow: 0px 0px 10px $primary;
+        @include animation(logo-ball-shine 3s ease-in-out infinite);
+    }
+    animation: logo-ball-levitate linear infinite, logo-ball-rotate 5s linear infinite;
+    -webkit-animation: logo-ball-levitate linear infinite, logo-ball-rotate 5s linear infinite;
+}
+
+@keyframes logo-ball-levitate{
+    0%{}
+    100%{bottom: 100%}
+}
+@keyframes logo-ball-rotate{
+    0%{}
+    100%{rotate: 360deg}
+}
+@keyframes logo-ball-shine{
+    0%{}
+    100%{opacity: 1;}
+}

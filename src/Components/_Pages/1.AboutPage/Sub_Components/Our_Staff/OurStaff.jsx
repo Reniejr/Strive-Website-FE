@@ -17,14 +17,14 @@ export default function OurStaff() {
     <section id="our-staff">
       <Container>
         <h3>
-          <span>/</span>Our Staff
+          <span>/</span>Strive Staff
         </h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
           deleniti?
         </p>
         <Row>
-          {data.map((user, i) => {
+          {data[0].map((user, i) => {
             return (
               <Col lg={6} key={i} className="school-staff">
                 <StaffCard flexibility={50} />
@@ -45,11 +45,29 @@ export default function OurStaff() {
             <h3>
               <span>/</span>Full Stack
             </h3>
+            <Row>
+              {data[1].map((user, i) => {
+                return (
+                  <Col xs={12} key={i} className="school-staff">
+                    <StaffCard flexibility={50} />
+                  </Col>
+                );
+              })}
+            </Row>
           </Col>
           <Col lg={6}>
             <h3>
               <span>/</span>AI
             </h3>
+            <Row>
+              {data[2].map((user, i) => {
+                return (
+                  <Col xs={12} key={i} className="school-staff">
+                    <StaffCard flexibility={50} />
+                  </Col>
+                );
+              })}
+            </Row>
           </Col>
         </Row>
       </Container>

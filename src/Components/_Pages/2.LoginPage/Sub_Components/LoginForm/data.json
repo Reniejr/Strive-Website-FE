@@ -1,0 +1,20 @@
+[
+    {
+        "id": "username",
+        "type": "text",
+        "placeholder": "Strive Username",
+        "feedback": {
+            "invalid": "Strive Student has a username",
+            "valid": "Seems a real username"
+        }
+    },
+    {
+        "id": "password",
+        "type": "password",
+        "placeholder": "Strive Secret Password",
+        "feedback": {
+            "invalid": "Need password... Or are you an hacker?",
+            "valid": "Looks Safe... hmmmm"
+        }
+    }
+]

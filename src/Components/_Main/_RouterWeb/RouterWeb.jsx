@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LandingPage from "../../_Pages/0.LandingPage/LandingPage";
 import AboutPage from "../../_Pages/1.AboutPage/AboutPage";
 import StriveBar from "../StriveBar/StriveBar";
+import LoginPage from "../../_Pages/2.LoginPage/LoginPage";
 
 export default function RouterWeb() {
   return (
@@ -16,6 +17,11 @@ export default function RouterWeb() {
           path="/about"
           exact
           render={(props) => <AboutPage {...props} />}
+        />
+        <Route
+          path="/login"
+          exact
+          render={(props) => <LoginPage {...props} />}
         />
       </Switch>
     </Router>

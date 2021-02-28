@@ -7,7 +7,7 @@ import OurStaff from "./Sub_Components/Our_Staff/OurStaff";
 //STYLE IMPORTS
 import "./AboutPage.scss";
 
-export default function AboutPage() {
+export default function AboutPage(props) {
   return (
     <div id="about-page">
       <OurStory />

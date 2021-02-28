@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 //STYLE IMPORT
 import "./Account.scss";
@@ -16,7 +17,7 @@ export default function Account() {
         </div>
       ) : (
         <div className="account-container">
-          <button>Log in / Sign in</button>
+          <Link to="/login">Log in / Sign in</Link>
           <img src="https://i.ibb.co/SXFJKwD/strive.png" alt="" />
         </div>
       )}
