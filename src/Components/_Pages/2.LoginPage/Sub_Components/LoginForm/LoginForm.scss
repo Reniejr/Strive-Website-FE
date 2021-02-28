@@ -43,5 +43,24 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            button{
+                @include strive-btn();
+                max-width: 200px;
+                padding: 5px 10px;
+                font-size: 1.1rem;
+            }
+            p{
+                width: 100%;
+                font-size: .85rem;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }

@@ -50,6 +50,7 @@ export default function LoginPage() {
             functions={{
               onSubmit: handleSubmit,
               showForm: () => setForm(false),
+              isLoader: setShowLoader,
             }}
             state={{ isValid: validated, isForm: form }}
           />

@@ -1,0 +1,91 @@
+@import '../../../../_SASS/Colors';
+@import '../../../../_SASS/CrossBrowser';
+@import '../../../../_SASS/General';
+@import '../../../../_SASS/Positions';
+.sign-in-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .token-validation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            text-align: center;
+        };
+        p:nth-of-type(1){
+            border: 2px solid $primary;
+            padding: 5px 10px;
+            @include borderRadius(10px);
+            font-weight: 600;
+            background-color: black;
+        }
+        p:nth-of-type(2){
+            cursor: pointer;
+            font-size: .85rem;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        button{
+            @include strive-btn();
+            max-width: 150px;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .row{
+            margin: 0;
+            width: 120%;
+        }
+        .socials{
+            margin: 1rem 0;
+            .col-md-6{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p{
+                    margin: 0;
+                    font-weight: 700;
+                    cursor: default;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                .social-btn{
+                    i{
+                        margin-right: 1rem;
+                    }
+                    &:hover{
+                        border-color: white;
+                    }
+                }
+                .github-btn{
+                    background-color:#79589f;
+                }
+                .linkedin-btn{
+                    background-color:#0077b5;
+                }
+            }
+        }
+        button{
+            @include strive-btn();
+            max-width: 200px;
+            padding: 5px 10px;
+            font-size: 1.1rem;
+        }
+        p{
+            width: 100%;
+            font-size: .85rem;
+            text-align: center;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

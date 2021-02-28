@@ -6,6 +6,9 @@ import data from "./data.json";
 //PERSONAL COMPONENTS IMPORTS
 import CheckedForm from "../CheckedForm/CheckedForm";
 
+//BOOTSTRAP IMPORTS
+import { Form } from "react-bootstrap";
+
 //STYLE IMPORTS
 import "./LoginForm.scss";
 
@@ -27,16 +30,17 @@ export default function LoginForm({ functions, state }) {
         ) : null}
       </div>
       <div className="login-form-container">
-        <CheckedForm
-          formDetails={data}
-          functions={{
-            buttonMsg: "Back to work",
-            submitLogin: functions.onSubmit,
-            changeFormText: "Not registered yet?",
-            changeForm: functions.showForm,
-          }}
-          state={state.isValid}
-        />
+        <Form
+          noValidate
+          validated={state.isValid}
+          onSubmit={functions.onSubmit}
+        >
+          {data.map((input) => {
+            return <CheckedForm data={input} key={input.id} />;
+          })}
+          <p onClick={functions.showForm}>Not registered yet?</p>
+          <button type="submit">Back to work</button>
+        </Form>
       </div>
     </div>
   );
