@@ -37,7 +37,7 @@ export default function LoginPage() {
         <div id="login">
           <header>
             <img src="https://i.ibb.co/SXFJKwD/strive.png" alt="" />
-            Join Strive School
+            <p>{form ? "Join Strive School" : "Student, back to work now"}</p>
           </header>
           <LoginForm
             functions={{

@@ -31,8 +31,8 @@
         "type": "email",
         "placeholder": "Email",
         "feedback": {
-            "invalid": "Please secure your account",
-            "valid": "Looks Safe... hmmmm"
+            "invalid": "How can we contact you?",
+            "valid": "Loading ads and other useless stuff"
         }
     },
     {

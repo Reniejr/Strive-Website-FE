@@ -18,13 +18,14 @@
             font-size: 2.5rem;
             font-weight: 700;
             padding: 1rem;
+            p{margin-bottom: 0; text-align: center}
             img{
                 width: 70px;
                 height: 70px;
                 @include borderRadius(50%);
                 margin-bottom: 1rem;
-                animation: login-logo-rotate 10s linear infinite, login-logo-shine 3s ease-in-out infinite;
-                -webkit-animation: login-logo-rotate 10s linear infinite, login-logo-shine 3s ease-in-out infinite;
+                animation: login-logo-rotate 6s linear infinite, login-logo-shine 3s ease-in-out infinite;
+                -webkit-animation: login-logo-rotate 6s linear infinite, login-logo-shine 3s ease-in-out infinite;
             }
         }
     }
@@ -35,5 +36,5 @@
 }
 @keyframes login-logo-shine{
     0%{}
-    100%{box-shadow: 0px 0px 5px 2px $primary;}
+    100%{box-shadow: 0px 0px 20px 2px $primary;}
 }
