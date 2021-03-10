@@ -6,25 +6,8 @@
         "feedback": {
             "invalid": "Don't You have a First Name?! Really?!",
             "valid": "Is it real? hmm..."
-        }
-    },
-    {
-        "id": "lastName",
-        "type": "text",
-        "placeholder": "Last Name",
-        "feedback": {
-            "invalid": "Please we need your dynasty name",
-            "valid": "Looks a royal blood family"
-        }
-    },
-    {
-        "id": "username",
-        "type": "text",
-        "placeholder": "Strive Username",
-        "feedback": {
-            "invalid": "Create your Strive Identity",
-            "valid": "Wow creative"
-        }
+        },
+        "value": ""
     },
     {
         "id": "email",
@@ -33,7 +16,18 @@
         "feedback": {
             "invalid": "How can we contact you?",
             "valid": "Loading ads and other useless stuff"
-        }
+        },
+        "value": ""
+    },
+    {
+        "id": "lastName",
+        "type": "text",
+        "placeholder": "Last Name",
+        "feedback": {
+            "invalid": "Please we need your dynasty name",
+            "valid": "Looks a royal blood family"
+        },
+        "value": ""
     },
     {
         "id": "password",
@@ -42,6 +36,7 @@
         "feedback": {
             "invalid": "Need password... Or are you an hacker?",
             "valid": "Looks Safe... hmmmm"
-        }
+        },
+        "value": ""
     }
 ]

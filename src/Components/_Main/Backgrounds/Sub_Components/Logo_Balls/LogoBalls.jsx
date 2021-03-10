@@ -23,3 +23,22 @@ export default function LogoBalls(props) {
     </>
   );
 }
+export const StaticBalls = function (props) {
+  let qty = [];
+  const n = props.qty;
+  for (let i = 0; i < n; i++) {
+    qty.push("ball");
+  }
+
+  return (
+    <>
+      {qty.map((ball, i) => {
+        return (
+          <div className="logo-balls-static" key={i}>
+            <img src="https://i.ibb.co/SXFJKwD/strive.png" alt="" />
+          </div>
+        );
+      })}
+    </>
+  );
+};

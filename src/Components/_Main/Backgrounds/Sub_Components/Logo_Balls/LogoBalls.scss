@@ -1,6 +1,4 @@
-@import '../../../../_SASS/CrossBrowser';
-@import '../../../../_SASS/Colors';
-@import '../../../../_SASS/Positions';
+@import '../../../../_SASS/All';
 .logo-balls{
     width: 1rem;
     height: 1rem;
@@ -38,4 +36,17 @@
 @keyframes logo-ball-shine{
     0%{}
     100%{opacity: 1;}
+}
+
+.logo-balls-static{
+    width: 1rem;
+    height: 1rem;
+    @include borderRadius(50%);
+    position: absolute;
+    img{
+        position: absolute;
+    width: 1rem;
+    height: 1rem;
+    @include borderRadius(50%);
+    }
 }

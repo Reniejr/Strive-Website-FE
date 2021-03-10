@@ -1,7 +1,4 @@
-@import '../../../../../_SASS/Colors';
-@import '../../../../../_SASS/CrossBrowser';
-@import '../../../../../_SASS/General';
-@import '../../../../../_SASS/Positions';
+@import '../../../../../_SASS/All';
 .staff-card-container{
     @include borderRadius(10px);
     border: 1px solid rgba(255,255,255,0.1);

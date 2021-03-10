@@ -3,9 +3,9 @@ import React from "react";
 //STYLE IMPORTS
 import "./Loader.scss";
 
-export default function Loader() {
+export default function Loader({ state }) {
   return (
-    <div className="loader">
+    <div className="loader" style={{ display: state ? "" : "none" }}>
       <div className="strive-loader">
         <div className="circle-loader"></div>
         <div className="ray-loader"></div>

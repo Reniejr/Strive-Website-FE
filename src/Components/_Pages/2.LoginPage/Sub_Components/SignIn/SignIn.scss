@@ -1,7 +1,4 @@
-@import '../../../../_SASS/Colors';
-@import '../../../../_SASS/CrossBrowser';
-@import '../../../../_SASS/General';
-@import '../../../../_SASS/Positions';
+@import '../../../../_SASS/All';
 .sign-in-form{
     display: flex;
     flex-direction: column;
@@ -10,17 +7,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        p{
+        p, h6{
             text-align: center;
         };
-        p:nth-of-type(1){
+        h6{
             border: 2px solid $primary;
-            padding: 5px 10px;
+            padding: 10px 15px;
             @include borderRadius(10px);
             font-weight: 600;
             background-color: black;
         }
-        p:nth-of-type(2){
+        p{
             cursor: pointer;
             font-size: .85rem;
             &:hover{
@@ -62,6 +59,10 @@
                     }
                     &:hover{
                         border-color: white;
+                    }
+                    .fa-check, .fa-times{
+                        margin-left: 1rem;
+                        margin-right: 0;
                     }
                 }
                 .github-btn{

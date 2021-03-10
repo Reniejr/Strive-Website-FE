@@ -1,0 +1,7 @@
+@import '../../../../_SASS/All';
+.login-loader{
+    height: 100vh;
+    perspective: 1000px;
+        transform-style: preserve-3d;
+    background-color: #121212; 
+}
