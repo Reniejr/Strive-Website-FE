@@ -1,3 +1,39 @@
+import Cookies from "js-cookie";
+
+//CHECK COOKIES
+export const checkCookies = () => {
+  return {
+    validate: Cookies.get("validate") !== undefined ? true : false,
+    github: Cookies.get("github") !== undefined ? true : false,
+    linkedIn: Cookies.get("linkedin") !== undefined ? true : false,
+  };
+};
+
+//TOKEN FORM STATE
+export const tokenFormState = {
+  email: "",
+  password: "",
+};
+
+//GET FIRST ACCESS_TOKEN
+export const getFirstAccessToken = async (body) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BASE_URL}/users/first-authorize`,
+    {
+      method: "POST",
+      body: JSON.stringify(body),
+      credentials: "include",
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
+    }
+  );
+  const result = await response.json();
+  localStorage.setItem("access_token", result.access_token);
+  // console.log(result);
+  return result;
+};
+
 //SUBMIT
 export const checkValidityForm = (e) => {
   e.preventDefault();

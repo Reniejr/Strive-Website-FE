@@ -10,16 +10,6 @@
         "value": ""
     },
     {
-        "id": "email",
-        "type": "email",
-        "placeholder": "Email",
-        "feedback": {
-            "invalid": "How can we contact you?",
-            "valid": "Loading ads and other useless stuff"
-        },
-        "value": ""
-    },
-    {
         "id": "lastName",
         "type": "text",
         "placeholder": "Last Name",

@@ -7,6 +7,8 @@ import AboutPage from "../../_Pages/1.AboutPage/AboutPage";
 import StriveBar from "../StriveBar/StriveBar";
 import LoginPage from "../../_Pages/2.LoginPage/LoginPage";
 import LoginLoader from "../Loader/OthersLoader/LoginLoader/LoginLoader";
+import SignInPage from "../../_Pages/3.SignInPage/SignInPage";
+import Exam from "../../_Pages/4.Exam/Exam";
 
 export default function RouterWeb() {
   return (
@@ -25,10 +27,11 @@ export default function RouterWeb() {
           render={(props) => <LoginPage {...props} />}
         />
         <Route
-          path="/login-loader"
+          path="/sign-in/:userId"
           exact
-          render={(props) => <LoginLoader {...props} />}
+          render={(props) => <SignInPage {...props} />}
         />
+        <Route path="/benchmark" render={(props) => <Exam {...props} />} />
       </Switch>
     </Router>
   );

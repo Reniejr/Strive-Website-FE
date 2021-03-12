@@ -1,0 +1,44 @@
+@import '../../_SASS/All';
+html, body, #root{
+    width: 100%;
+}
+#sign-in-page{
+    position: relative;
+    .form-container{
+    @include borderRadius(5px);
+    overflow-y: auto;
+    width: 60%;
+    padding: 1rem;
+        // background-color: black;
+        backdrop-filter: blur(5px);
+        color: #fff;
+        header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 1rem;
+            p{margin-bottom: 0; text-align: center}
+            img{
+                width: 70px;
+                height: 70px;
+                @include borderRadius(50%);
+                margin-bottom: 1rem;
+                animation: login-logo-rotate 6s linear infinite, login-logo-shine 3s ease-in-out infinite;
+                -webkit-animation: login-logo-rotate 6s linear infinite, login-logo-shine 3s ease-in-out infinite;
+            }
+        }
+        h6{
+            width: 60%;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+            text-align: center;
+            border: 2px solid $primary;
+            padding: 10px 15px;
+            @include borderRadius(10px);
+            font-weight: 600;
+            background-color: black;
+        }
+    }
+}

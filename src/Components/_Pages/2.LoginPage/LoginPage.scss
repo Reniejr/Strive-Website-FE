@@ -25,6 +25,40 @@
                 -webkit-animation: login-logo-rotate 6s linear infinite, login-logo-shine 3s ease-in-out infinite;
             }
         }
+        .token-validation{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            form{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
+            p, h6{
+                text-align: center;
+            };
+            h6{
+                border: 2px solid $primary;
+                padding: 10px 15px;
+                @include borderRadius(10px);
+                font-weight: 600;
+                background-color: black;
+            }
+            p{
+                cursor: pointer;
+                font-size: .85rem;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            button{
+                @include strive-btn();
+                max-width: 150px;
+                font-size: 1.1rem;
+                padding: 5px 10px;
+            }
+        }
     }
 }
 @keyframes login-logo-rotate{
