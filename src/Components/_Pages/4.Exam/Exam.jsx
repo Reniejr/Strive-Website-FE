@@ -14,7 +14,10 @@ export default function Exam() {
       <BG01 />
       <Router>
         <Switch>
-          <Route path="/" render={(props) => <StartingPage {...props} />} />
+          <Route
+            path="/benchmark/:testType"
+            render={(props) => <StartingPage {...props} />}
+          />
         </Switch>
       </Router>
     </div>
