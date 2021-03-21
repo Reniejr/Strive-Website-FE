@@ -1,0 +1,10 @@
+[
+    {"info":"Exam", "id":"examName"},
+    {"info":"Questions", "id":"questions"},
+    {"info":"Max-Result", "id":"maxResults"},
+    {"info":"Exam ID", "id":"examId"},
+    {"info":"Time", "id":"time"},
+    {"info":"Required Result", "id":"requiredResults"},
+    {"info":"Exam Type", "id":"examType"},
+    {"info":"Participants", "id":"participants"}
+]

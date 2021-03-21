@@ -1,0 +1,82 @@
+@import '../../../../../../_SASS/All';
+.modal{
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, .5);
+    .modal-dialog{
+        max-width: 600px;
+        .modal-content{
+            margin: auto;
+            .modal-header{
+                position: relative;
+                padding: 0;
+                height: 120px;
+                border: none;
+                .modal-title{
+                    z-index: 5;
+                    font-size: 1rem;
+                    padding: 2rem 1rem;
+                    font-weight: 600;
+                    color: #fff;
+                }
+                .upper-layer{
+                    width: 100%;
+                    height: 150px;
+                    transform: rotateX(180deg);
+                    position: absolute;
+                    top:0;
+                }
+                .layer-logo{
+                    width: 100px; 
+                    position: absolute; 
+                    top: 30px; 
+                    right: 5px; 
+                }
+            }
+            .modal-body{
+                display: flex;
+                justify-content: center;
+                margin:1rem 0;
+                input{
+                    border: none;
+                    border-bottom: 2px solid $primary;
+                    outline: none;
+                    color: black;
+                    font-weight: 700;
+                }
+            }
+            .modal-footer{
+                position: relative;
+                border: none;
+                padding: 0;
+                height: 120px;
+                .lower-layer{
+                    width: 100%; 
+                    height: 150px; 
+                    transform: rotateY(180deg); 
+                    position: absolute; 
+                    bottom:0;
+                    margin: 0;
+                }
+                .layer-logo{
+                    width: 75px; 
+                    height:75px; 
+                    border-radius: 50%; 
+                    position: absolute; 
+                    bottom: 10px; 
+                    left: 20px;
+                }
+                button{
+                    z-index: 5;
+                    margin-top: 2.5rem;
+                    margin-right: 2rem;
+                    @include strive-btn-default();
+                    background-color: $primary;
+                    color: black;
+                    &:hover{
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}

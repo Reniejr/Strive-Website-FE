@@ -30,7 +30,7 @@ export const getFirstAccessToken = async (body) => {
   );
   const result = await response.json();
   localStorage.setItem("access_token", result.access_token);
-  // console.log(result);
+  console.log(result);
   return result;
 };
 

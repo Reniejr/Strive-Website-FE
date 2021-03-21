@@ -4,12 +4,16 @@ import io from "socket.io-client";
 //UTILITIES IMPORTS
 import { getExamDetails } from "./utilities";
 
+//REDUX IMPORTS
+import { useDispatch } from "react-redux";
+import { setUserExam } from "../../../../../Store/admissionTest/actions";
 //VALUES IMPORTS
 import { examDetailsState, joinRoomState } from "./values";
 
 //PERSONAL COMPONENTS IMPORTS
 import BenchmarkLayer from "../BenchmarkLayer/BenchmarkLayer";
 import ModalExam from "../ModalExam/ModalExam";
+import Quests from "../Quests/Quests";
 
 //STYLE IMPORTS
 import "./StartingPage.scss";
@@ -22,6 +26,8 @@ export default function StartingPage(props) {
   const [examDetail, setExamDetail] = useState(examDetailsState);
   const [showModal, setShowModal] = useState(false);
   const [timer, setTimer] = useState(0);
+  const [userAnswer, setUserAnswer] = useState([]);
+  const dispatch = useDispatch();
 
   //SOCKET STATES
   const [connect, setConnect] = useState(false);
@@ -69,10 +75,17 @@ export default function StartingPage(props) {
   const fillModal = (e) => {
     if (e.keyCode === 13 || e.key === "Enter") {
       setJoinRoom({ ...joinRoom, username: e.currentTarget.value });
+      dispatch(setUserExam(e.currentTarget.value));
       setShowModal(false);
     } else {
       setJoinRoom({ ...joinRoom, username: e.currentTarget.value });
     }
+  };
+
+  const confirmEmail = () => {
+    setJoinRoom({ ...joinRoom, username: joinRoom.username });
+    dispatch(setUserExam(joinRoom.username));
+    setShowModal(false);
   };
 
   //TIMER
@@ -82,11 +95,46 @@ export default function StartingPage(props) {
     }, 1000);
   };
 
+  //CLICK ANSWER
+  const giveAnswers = (quest, answer, answerI) => {
+    let isAnswered = userAnswer.filter((answer) => answer.quest === quest);
+    let index = userAnswer.findIndex((answer) => answer.quest === quest);
+    // console.log(answer);
+    let saveAnswer = {
+      question: quest,
+      answer: answerI,
+      isCorrect: answer.answer.isCorrect,
+    };
+    // console.log(saveAnswer);
+    socket.emit("admissionTest", {
+      userAnswer: saveAnswer,
+      roomName: examDetail.roomName,
+    });
+    let answersArray = [];
+    // console.log(answer);
+    // console.log(isAnswered);
+    // console.log(quest);
+    if (isAnswered.length > 0) {
+      index === 0
+        ? (answersArray = [answer, ...userAnswer.slice(index + 1)])
+        : (answersArray = [
+            ...userAnswer.slice(0, index),
+            answer,
+            ...userAnswer.slice(index + 1),
+          ]);
+    } else {
+      // console.log(answer);
+      answersArray = [...userAnswer, answer];
+      // console.log(answersArray);
+    }
+    setUserAnswer(answersArray);
+  };
+
   return (
     <div id="starting-page">
       <ModalExam
         state={{ show: showModal, value: joinRoom.username }}
-        functions={{ handleClose: () => setShowModal(false), fillModal }}
+        functions={{ handleClose: () => confirmEmail(), fillModal }}
       />
       <BenchmarkLayer
         functions={{
@@ -96,7 +144,20 @@ export default function StartingPage(props) {
             connectToSocket: () => setConnect(true),
           },
         }}
-        state={{ examDetail, sockets: { details: joinRoom } }}
+        state={{
+          examDetail,
+          sockets: { details: joinRoom },
+          isStarted: connect,
+        }}
+      />
+      <Quests
+        state={{
+          quests: examDetail.quests,
+          isStarted: connect,
+          time: timer,
+          answerList: userAnswer,
+        }}
+        functions={{ clickAnswer: giveAnswers }}
       />
       <div className="side-bar" style={{ right: sideBar ? "0" : "-400px" }}>
         <h3>Please Follow the rules</h3>

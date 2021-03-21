@@ -1,0 +1,87 @@
+@import '../../../../../../_SASS/All';
+.admin-exam-sidebar{
+    width: 400px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 4px solid $primary;
+    z-index: 10;
+    background-color: black;
+    padding: 2rem 1rem;
+    @include transition(margin-left 1s ease);
+    .toggler{
+        width: 20px;
+        height: 100px;
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+        background-color: $primary;
+        @include transform(translateY(-50%));
+        cursor: pointer;
+    }
+    .benchmark-list{
+        .search-container{
+            display: flex;
+            justify-content: center;
+            input{
+                outline: none;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding: 5px 10px;
+                border: 3px solid $primary;
+                font-weight: 600;
+            }
+            button{
+                @include strive-btn-default();
+                border-top-left-radius: 0px !important;
+                border-bottom-left-radius: 0px !important;
+                border-left: none;
+            }
+        }
+        .search-options{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, .5);
+            font-size: 0.85rem;
+            cursor: pointer;
+            span{
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            li{
+                width:100%;
+                padding: 10px 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #fff;
+                @include borderRadius(5px);
+                border: 2px solid $primary;
+                font-weight: 600;
+                cursor: pointer;
+                &:hover{
+                    background-color: transparent;
+                    color: #fff;
+                }
+                span{
+                    content: ' ';
+                    display: block;
+                    height: 40px;
+                    border: 3px solid;
+                }
+            }
+        }
+    }
+}

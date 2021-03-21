@@ -8,7 +8,10 @@ import "./BenchmarkLayer.scss";
 
 export default function BenchmarkLayer({ functions, state }) {
   return (
-    <div className="starting-layer">
+    <div
+      className="starting-layer"
+      style={{ display: state.isStarted ? "none" : "" }}
+    >
       <header>
         <h2>{state.examDetail.roomName}</h2>
         <p>{state.examDetail.roomType}</p>

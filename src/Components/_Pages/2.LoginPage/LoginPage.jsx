@@ -12,7 +12,7 @@ import { getFirstInfos } from "../3.SignInPage/Sub_Components/SignIn/utilities";
 
 //PERSONAL COMPONENTS IMPORTS
 import BG01 from "../../_Main/Backgrounds/BG01/BG01";
-import Loader from "../../_Main/Loader/Loader";
+import Loader from "../../_Main/Loaders/MainLoader/Loader";
 import LoginForm from "./Sub_Components/LoginForm/LoginForm";
 import CheckedForm from "./Sub_Components/CheckedForm/CheckedForm";
 

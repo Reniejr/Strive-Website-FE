@@ -1,8 +1,5 @@
 import React from "react";
 
-//PERSONAL COMPONENTS IMPORTS
-import Loader from "../../../../_Main/Loader/Loader";
-
 //BOOTSTRAP IMPORTS
 import { Container, Row, Col } from "react-bootstrap";
 
