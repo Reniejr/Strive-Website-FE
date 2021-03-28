@@ -133,9 +133,23 @@ export default function StartingPage(props) {
   return (
     <div id="starting-page">
       <ModalExam
-        state={{ show: showModal, value: joinRoom.username }}
-        functions={{ handleClose: () => confirmEmail(), fillModal }}
-      />
+        state={{ show: showModal }}
+        functions={{ handleClose: () => confirmEmail() }}
+        content={{
+          title: "Confirm your email to join the Admission Test",
+          button: "Confirm",
+          style: { display: "flex", justifyContent: "center" },
+        }}
+      >
+        <input
+          type="email"
+          id="email"
+          placeholder="Your email"
+          onChange={fillModal}
+          onKeyDown={fillModal}
+          value={joinRoom.username}
+        />
+      </ModalExam>
       <BenchmarkLayer
         functions={{
           sideBar: () => setSideBar(true),

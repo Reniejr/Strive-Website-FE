@@ -5,11 +5,13 @@ import thunk from "redux-thunk";
 //REDUCERS IMPORTS
 import { userReducer } from "./user/reducers";
 import { admissionTestReducer } from "./admissionTest/reducers";
+import { adminPageReducer } from "./adminPage/reducers";
 
 const composedEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
   user: userReducer,
   admissionTest: admissionTestReducer,
+  adminPageReducer,
 });
 
 export const store = createStore(

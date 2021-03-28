@@ -1,0 +1,10 @@
+@import '../../../../Style';
+.user-list{
+    h4{
+        font-weight: 700;
+        span{
+            color: $primary;
+            margin-right: 1rem;
+        }
+    }
+}

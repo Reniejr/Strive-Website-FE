@@ -10,6 +10,7 @@ import SignInPage from "../../_Pages/3.SignInPage/SignInPage";
 import Exam from "../../_Pages/4.Exam/Exam";
 import StartingPage from "../../_Pages/4.Exam/Sub_Components/StartingPage/StartingPage";
 import AdminExam from "../../_Pages/4.Exam/Sub_Components/AdminExam/AdminExam";
+import AdminPage from "../../_Pages/5.AdminPage/AdminPage";
 
 export default function RouterWeb() {
   return (
@@ -31,6 +32,11 @@ export default function RouterWeb() {
           path="/sign-in/:userId"
           exact
           render={(props) => <SignInPage {...props} />}
+        />
+        <Route
+          path="/admin-page/:userId"
+          exact
+          render={(props) => <AdminPage {...props} />}
         />
         <Route
           path="/benchmark"

@@ -1,0 +1,31 @@
+@import '../../../../../../_SASS/All';
+//COURSE MENU
+.course-menu{
+    .toggle-course{
+        margin: 2rem 0;
+        span{
+            text-align: center;
+            padding: 10px 15px;
+            @include borderRadius(5px);
+            cursor: pointer;
+        }
+    }
+    .course-options{
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        border: 1px solid $black01;
+        border-bottom: none;
+        li{
+            width: 100%;
+            padding: 20px;
+            border-bottom: 1px solid $black01;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            &:hover{
+                background-color: $black01;
+            }
+        }
+    }
+}

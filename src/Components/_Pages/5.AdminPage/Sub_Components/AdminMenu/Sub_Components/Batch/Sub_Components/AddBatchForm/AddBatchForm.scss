@@ -1,0 +1,22 @@
+@import '../../../../Style';
+.add-batch{
+    padding: 2rem;
+    .batch-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .circular-logo{
+            width: 7rem;
+            height: 7rem;
+            margin-bottom: 2rem;
+        }
+        button{
+            @include strive-btn();
+            font-size: 1.1rem;
+            padding: 10px;
+            &:hover{
+                color: black;
+            }
+        }
+    }
+}

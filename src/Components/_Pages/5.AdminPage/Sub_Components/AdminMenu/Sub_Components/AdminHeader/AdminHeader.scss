@@ -1,0 +1,18 @@
+@import '../../Style';
+
+.admin-header{
+    position: relative;
+    i{
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    height: 60px;
+    padding: 1rem 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: $primary;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    z-index: 5;
+}

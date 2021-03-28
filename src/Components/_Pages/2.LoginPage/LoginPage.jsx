@@ -14,10 +14,7 @@ import { getFirstInfos } from "../3.SignInPage/Sub_Components/SignIn/utilities";
 import BG01 from "../../_Main/Backgrounds/BG01/BG01";
 import Loader from "../../_Main/Loaders/MainLoader/Loader";
 import LoginForm from "./Sub_Components/LoginForm/LoginForm";
-import CheckedForm from "./Sub_Components/CheckedForm/CheckedForm";
-
-//BOOTSTRAP IMPORTS
-import { Form } from "react-bootstrap";
+import TokenValidation from "./Sub_Components/TokenValidation/TokenValidation";
 
 //STYLE IMPORTS
 import "./LoginPage.scss";
@@ -28,6 +25,7 @@ export default function LoginPage() {
   const [form, setForm] = useState(false);
   const [isToken, setIsToken] = useState(true);
   const [tokenForm, setTokenForm] = useState(tokenFormState);
+  const [alert, setAlert] = useState(false);
 
   const history = useHistory();
 
@@ -46,12 +44,20 @@ export default function LoginPage() {
     setValidated(true);
   };
 
-  const checkToken = () => {
+  const checkToken = (result) => {
     setShowLoader(true);
-    setTimeout(() => {
-      setIsToken(true);
-      setShowLoader(false);
-    }, 8000);
+    if (result.status === 500) {
+      setAlert(true);
+      setTimeout(() => {
+        setIsToken(false);
+        setShowLoader(false);
+      }, 8000);
+    } else {
+      setTimeout(() => {
+        setIsToken(true);
+        setShowLoader(false);
+      }, 8000);
+    }
   };
 
   const fillTokenForm = async (e) => {
@@ -68,11 +74,13 @@ export default function LoginPage() {
   const submitTokenForm = async (e) => {
     e.preventDefault();
     let result = await getFirstAccessToken(tokenForm);
-    let infos = await getFirstInfos(result.access_token);
-    checkToken();
-    setTimeout(() => {
-      history.push(`/sign-in/${infos._id}`);
-    }, 8100);
+    checkToken(result);
+    if (result.status !== 500) {
+      let infos = await getFirstInfos(result.access_token);
+      setTimeout(() => {
+        history.push(`/sign-in/${infos._id}`);
+      }, 8100);
+    }
   };
 
   return (
@@ -82,7 +90,7 @@ export default function LoginPage() {
       <div id="login">
         <header>
           <img src="https://i.ibb.co/SXFJKwD/strive.png" alt="" />
-          <p>Student, back to work now</p>
+          <p>{form ? "" : "Student, back to work now"}</p>
         </header>
         <LoginForm
           functions={{
@@ -91,62 +99,14 @@ export default function LoginPage() {
           }}
           state={{ isValid: validated, isForm: form }}
         />
-        {/* <SignIn
+        <TokenValidation
+          state={{ form, validated, alert }}
           functions={{
-            onSubmit: handleSubmit,
-            showForm: () => setForm(false),
-            isLoader: setShowLoader,
+            handleSubmit: (e) => submitTokenForm(e),
+            fillTokenForm: (e) => fillTokenForm(e),
+            changeForm: () => setForm(false),
           }}
-          state={{ isValid: validated, isForm: form }}
-        /> */}
-        <div
-          className="token-validation"
-          style={{ display: form ? "" : "none" }}
-        >
-          <h6>
-            Before fill the form, confirm your email with the password we sent
-            you, to get the access of your basic informations. (For security
-            purposes){" "}
-          </h6>
-          <Form
-            noValidate
-            validated={validated}
-            onSubmit={(e) => submitTokenForm(e)}
-          >
-            <CheckedForm
-              data={{
-                id: "email",
-                type: "email",
-                placeholder: "Confirm your email",
-                feedback: {
-                  invalid: "Invalid Email - Contact Strive Staff",
-                  valid: "Seems a valid email",
-                },
-              }}
-              functions={{
-                handleChange: (e) => fillTokenForm(e),
-                handleKeyDown: (e) => fillTokenForm(e),
-              }}
-            />
-            <CheckedForm
-              data={{
-                id: "password",
-                type: "password",
-                placeholder: "Password we provide",
-                feedback: {
-                  invalid: "Invalid Password - Contact Strive Staff",
-                  valid: "Seems Ok",
-                },
-              }}
-              functions={{
-                handleChange: (e) => fillTokenForm(e),
-                handleKeyDown: (e) => fillTokenForm(e),
-              }}
-            />
-            <p onClick={() => setForm(false)}>Already registered?</p>
-            <button type="submit">Check Email</button>
-          </Form>
-        </div>
+        />
       </div>
     </div>
   );

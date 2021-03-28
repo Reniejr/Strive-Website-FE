@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { newStudent } from "./utilities";
 
 //PERSONAL COMPONENTS IMPORTS
-import ResultModal from "../ResultModal/ResultModal";
+import ModalExam from "../../../ModalExam/ModalExam";
 
 //STYLE IMPORTS
 import "./Results.scss";
@@ -38,13 +38,35 @@ export default function Results({ state, functions }) {
 
   return (
     <div id="results" style={{ display: state.showResult ? "" : "none" }}>
-      <ResultModal
-        state={{
-          show: showModal,
-          success: actual >= requiredResult ? true : false,
+      <ModalExam
+        state={{ show: showModal }}
+        functions={{
+          handleClose: () => setShowModal(false),
         }}
-        functions={{ handleClose: () => setShowModal(false) }}
-      />
+        content={{
+          title: "Strive School",
+          button: "Check Results",
+        }}
+      >
+        {actual >= requiredResult ? (
+          <>
+            <h4>Congratulations!</h4>
+            <br />
+            <p>
+              Welcome on Strive School. <br /> You will receive an email with
+              instructions to follow in order to start your journey with us.
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              We are sorry, you did not pass the admission test. We advice you
+              to try to learn the basic stuff of the IT sector and try again to
+              join us. <br /> Strive and do not let this exam stop you
+            </p>
+          </>
+        )}
+      </ModalExam>
       <ul>
         <li>
           Total Score :{" "}

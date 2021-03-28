@@ -1,0 +1,4 @@
+@import '../../_SASS/All';
+.circular-logo{
+    @include borderRadius(50%);
+}
