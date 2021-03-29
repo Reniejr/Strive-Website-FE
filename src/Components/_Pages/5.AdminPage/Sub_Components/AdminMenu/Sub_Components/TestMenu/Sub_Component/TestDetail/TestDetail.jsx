@@ -5,16 +5,16 @@ import { useSelector, useDispatch } from "react-redux";
 
 //BOOTSTRAP IMPORTS
 import { Row, Col } from "react-bootstrap";
-import UserList from "../UserList/UserList";
 
-export default function BatchDetail({ state, functions }) {
+export default function TestDetail({ state, functions }) {
+  //REDUX
   const adminPage = useSelector((state) => state.adminPageReducer);
 
   return (
     <div
-      className="batch-detail details opt"
+      className="test-detail details opt"
       style={{
-        marginLeft: adminPage.sub_title === "batch-detail" ? "" : "120%",
+        marginLeft: adminPage.sub_title === "test-detail" ? "" : "120%",
       }}
     >
       <Row>
@@ -30,7 +30,7 @@ export default function BatchDetail({ state, functions }) {
               })}
             </Col>
             <Col xs={12} lg={6}>
-              {state.infos.slice(3, 6).map((info, infoI) => {
+              {state.infos.slice(3, 5).map((info, infoI) => {
                 return (
                   <p key={infoI}>
                     {info.info} : <span>{info.value}</span>
@@ -46,15 +46,15 @@ export default function BatchDetail({ state, functions }) {
           <p>
             {state.infos.length > 0 ? (
               <>
-                {state.infos[6].info} :{" "}
-                <span>{state.infos[6].value.length}</span>
+                {state.infos[5].info} :{" "}
+                <span>{state.infos[5].value.length}</span>
               </>
             ) : null}
           </p>
           <p
-            onClick={() =>
-              functions.setUserList(state.infos[6].value, state.infos[6].info)
-            }
+          // onClick={() =>
+          //   functions.setUserList(state.infos[6].value, state.infos[6].info)
+          // }
           >
             Show the list
           </p>
@@ -63,21 +63,20 @@ export default function BatchDetail({ state, functions }) {
           <p>
             {state.infos.length > 0 ? (
               <>
-                {state.infos[7].info} :{" "}
-                <span>{state.infos[7].value.length}</span>
+                {state.infos[6].info} :{" "}
+                <span>{state.infos[6].value.length}</span>
               </>
             ) : null}
           </p>
           <p
-            onClick={() =>
-              functions.setUserList(state.infos[7].value, state.infos[7].info)
-            }
+          // onClick={() =>
+          //   functions.setUserList(state.infos[7].value, state.infos[7].info)
+          // }
           >
             Show the list
           </p>
         </Col>
       </Row>
-      <UserList state={{ list: state.list, listName: state.listName }} />
     </div>
   );
 }

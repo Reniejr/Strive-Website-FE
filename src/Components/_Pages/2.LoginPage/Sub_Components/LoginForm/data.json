@@ -1,11 +1,11 @@
 [
     {
-        "id": "username",
-        "type": "text",
-        "placeholder": "Strive Username",
+        "id": "email",
+        "type": "email",
+        "placeholder": "Strive Email",
         "feedback": {
-            "invalid": "Strive Student has a username",
-            "valid": "Seems a real username"
+            "invalid": "Strive Student has a email",
+            "valid": "Seems a real email"
         }
     },
     {

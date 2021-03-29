@@ -79,7 +79,7 @@ export default function Batch({ functions }) {
         functions={{ setUserList }}
       />
       <div
-        className="add-batch batch-opt"
+        className="add-batch opt"
         style={{
           marginLeft: adminPage.sub_title === "add-batch" ? "" : "120%",
         }}

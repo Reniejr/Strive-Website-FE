@@ -7,9 +7,6 @@ import { setSubTitle } from "Store/adminPage/actions";
 //DATA IMPORTS
 import { batchStatus } from "../../../../values";
 
-//STYLE IMPORTS
-import "./BatchList.scss";
-
 export default function BatchList({ state, functions }) {
   //REDUX
   const adminPage = useSelector((state) => state.adminPageReducer);
@@ -17,10 +14,10 @@ export default function BatchList({ state, functions }) {
 
   return (
     <div
-      className="batch-list batch-opt"
+      className="batch-list opt"
       style={{ marginLeft: adminPage.sub_title === "batch-list" ? "" : "120%" }}
     >
-      <ul>
+      <ul className="menu-list">
         <li onClick={() => dispatch(setSubTitle("add-batch"))}>
           <i className="fas fa-plus-circle"></i>
           Add Another Batch

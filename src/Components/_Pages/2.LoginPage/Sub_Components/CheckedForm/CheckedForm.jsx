@@ -13,7 +13,7 @@ export default function CheckedForm({ data, functions }) {
       <Form.Group controlId={data.id} key={data.id}>
         <Form.Label>{data.id}</Form.Label>
         <i
-          class={`fas ${pwd === "password" ? "fa-eye-slash" : "fa-eye"}`}
+          className={`fas ${pwd === "password" ? "fa-eye-slash" : "fa-eye"}`}
           style={{
             display: data.type === "password" ? "" : "none",
           }}

@@ -42,3 +42,42 @@ export const checkValidityForm = (e) => {
     e.stopPropagation();
   }
 };
+
+//LOGIN
+export const loginFn = async (bodyLogin) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BASE_URL}/users/authorize`,
+    {
+      method: "POST",
+      body: JSON.stringify(bodyLogin),
+      headers: new Headers({ "Content-Type": "application/json" }),
+    }
+  );
+  const result = await response.json();
+  console.log(result);
+  return result;
+};
+
+//GET PROFILE
+export const getProfile = async (token) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BASE_URL}/users/profile`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  const result = await response.json();
+  console.log(result);
+  return result;
+};
+
+//EXPORT DASHBOARD REDIRECT
+export const dashboardRedirect = async (role, id, history) => {
+  switch (role) {
+    case "admin":
+      return history.push(`/admin-page/${id}`);
+    default:
+  }
+};

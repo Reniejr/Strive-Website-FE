@@ -98,3 +98,51 @@ export const newBatchState = {
   startDate: "",
   status: "",
 };
+
+//TEST STATUS
+export const testStatus = (status) => {
+  switch (status) {
+    case "Not Completed":
+      return { borderColor: "red" };
+    case "Completed":
+      return { borderColor: "#00ff84" };
+    default:
+      return {};
+  }
+};
+
+//TEST DETAIL INFOS
+export const testInfo = (test) => {
+  if (test) {
+    return [
+      {
+        info: "Test Type",
+        value: test.roomType,
+      },
+      {
+        info: "ID",
+        value: test._id,
+      },
+      {
+        info: "Name",
+        value: test.roomName,
+      },
+      {
+        info: "Status",
+        value: test.status,
+      },
+      {
+        info: "Time",
+        value: test.time,
+      },
+      {
+        info: "Participants List",
+        value: test.membersList,
+      },
+      {
+        info: "Questions List",
+        value: test.quests,
+      },
+    ];
+  }
+};

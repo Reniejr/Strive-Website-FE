@@ -1,5 +1,8 @@
 import React from "react";
 
+//REDUX IMPORTS
+import { useSelector } from "react-redux";
+
 //ASSETS IMPORTS
 import bgLogo from "./assets/backgr03.png";
 import texture from "./assets/wood-texture.jpg";
@@ -7,7 +10,8 @@ import texture from "./assets/wood-texture.jpg";
 //STYLE IMPORTS
 import "./HeaderCard.scss";
 
-export default function HeaderCard({ state, functions }) {
+export default function HeaderCard() {
+  const userState = useSelector((state) => state.user.user);
   return (
     <div className="header-card">
       <svg
@@ -24,16 +28,16 @@ export default function HeaderCard({ state, functions }) {
       </svg>
       <img src={texture} alt="" className="card-texture" />
       <header>
-        <img src="" alt="" className="profile" />
+        <img src={userState.profile} alt="" className="profile" />
         <div className="basic-info">
           <h3>
-            {state.user.lastName} {state.user.firstName}
+            {userState.lastName} {userState.firstName}
           </h3>
-          <p>id: {state.user._id}</p>
+          <p>id: {userState._id}</p>
         </div>
       </header>
       <div className="info">
-        <h4>{state.user.role}</h4>
+        <h4>{userState.occupation}</h4>
       </div>
     </div>
   );

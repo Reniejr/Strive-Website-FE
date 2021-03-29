@@ -35,6 +35,16 @@ export const postBatch = async (newBatch, course) => {
     headers: new Headers({ "Content-Type": "application/json" }),
   });
   const result = await response.json();
+  // console.log(result);
+  return result;
+};
+
+//GET TESTS LIST
+export const getTestsList = async () => {
+  const response = await fetch(
+    `${process.env.REACT_APP_SOCKET_BASE_URL}/socket-room`
+  );
+  const result = await response.json();
   console.log(result);
   return result;
 };

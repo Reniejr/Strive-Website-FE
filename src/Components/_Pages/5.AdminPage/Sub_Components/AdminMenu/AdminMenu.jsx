@@ -15,6 +15,7 @@ import { dropDownValues } from "./values";
 //PERSONAL COMPONENTS IMPORTS
 import Course from "./Sub_Components/Course/Course";
 import Batch from "./Sub_Components/Batch/Batch";
+import TestMenu from "./Sub_Components/TestMenu/TestMenu";
 
 //BOOTSTRAP IMPORTS
 import { Row, Col, Dropdown } from "react-bootstrap";
@@ -23,10 +24,7 @@ import { Row, Col, Dropdown } from "react-bootstrap";
 import "./AdminMenu.scss";
 import AdminHeader from "./Sub_Components/AdminHeader/AdminHeader";
 
-export default function AdminMenu({ state, functions }) {
-  //STATE COURSE MENU
-  const [subOpt, setSubOpt] = useState("batch");
-
+export default function AdminMenu() {
   //REDUX
   const main_option = useSelector(
     (state) => state.adminPageReducer.main_option
@@ -72,6 +70,7 @@ export default function AdminMenu({ state, functions }) {
         <Col xs={12} md={8}>
           <AdminHeader />
           <Batch />
+          <TestMenu />
         </Col>
       </Row>
     </div>
