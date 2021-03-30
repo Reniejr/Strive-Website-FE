@@ -1,0 +1,64 @@
+@import '../../Style';
+#exam-opt{
+    border-color: #fff;
+    display: flex;
+    color: rgba(255, 255, 255, .4);
+    &:hover{
+        color: black;
+        .bg-opt{
+            opacity: 1;
+            background: linear-gradient(129deg, rgba(170, 169, 173, 1) 40%, rgba(197, 196, 200, 1) 50%, rgba(225, 224, 228, 1) 80%, rgba(254, 253, 255, 1) 90%, rgba(255, 255, 255, 1) 100%);
+        }
+        .last-benchmark{
+            margin-top: -10vh;
+            .exam-info{
+                margin-top: 1rem;
+            }
+        }
+    }
+    .bg-opt{
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        @include transition(opacity 1s ease);
+        z-index: -1;
+    }
+    .last-benchmark{
+        @include absoluteCentered();
+        width: 90%;
+        @include transition(margin-top 1s ease);
+        .CircularProgressbar{
+            width: 100px;
+            height: 100px;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        .exam-basic-info{
+            display: inline-block;
+            p, h5{
+                margin: 0;
+                text-transform: capitalize;
+            }
+            h5{
+                font-weight: 700;
+            }
+        }
+        .exam-info{
+            position: absolute;
+            margin-top: 100%;
+            @include transition(all 1s ease);
+            p{
+                margin: 0;
+                font-size: .9rem;
+                span{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

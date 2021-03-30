@@ -39,8 +39,8 @@ export default function LoginForm({ functions, state }) {
   }, []);
 
   const handleLogin = async (e) => {
-    e.preventDefault();
     if (e.keyCode === 13 || e.key === "Enter") {
+      e.preventDefault();
       const token = await loginFn(loginFill);
       const profile = await getProfile(token.access_token);
       if (profile) {

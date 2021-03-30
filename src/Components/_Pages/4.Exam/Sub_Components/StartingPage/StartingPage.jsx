@@ -6,7 +6,10 @@ import { getExamDetails } from "./utilities";
 
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
-import { setUserExam } from "../../../../../Store/admissionTest/actions";
+import {
+  setUserExam,
+  setExam,
+} from "../../../../../Store/admissionTest/actions";
 //VALUES IMPORTS
 import { examDetailsState, joinRoomState } from "./values";
 
@@ -45,7 +48,7 @@ export default function StartingPage(props) {
       let testId = props.match.params.testType;
       let examDetails = await getExamDetails(testId);
       setExamDetail(examDetails);
-
+      dispatch(setExam(examDetails));
       //SET TIMER
       setTimer(60 * examDetails.time);
 

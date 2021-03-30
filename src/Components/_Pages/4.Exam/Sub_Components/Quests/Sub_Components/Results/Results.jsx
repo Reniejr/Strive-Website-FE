@@ -17,6 +17,7 @@ export default function Results({ state, functions }) {
   const [requiredResult, setRequiredResult] = useState(0);
   const [actual, setActual] = useState(0);
   const admissionState = useSelector((state) => state.admissionTest);
+  const examState = useSelector((state) => state.admissionTest.exam);
 
   useEffect(() => {
     if (state.showResult) {
@@ -27,10 +28,23 @@ export default function Results({ state, functions }) {
         (li) => li.answer.isCorrect === true
       ).length;
       setActual(userResult);
+      let batchInfo = {
+        batch: examState.batch,
+        course: examState.course,
+      };
+      let examInfo = {
+        examId: examState._id,
+        examType: examState.roomType,
+        examName: examState.roomName,
+        time: examState.time,
+        quests: examState.quests,
+        points: state.answerList.filter((li) => li.answer.isCorrect === true)
+          .length,
+      };
       if (userResult >= minimum) {
         // console.log("success", admissionState);
         (async () => {
-          await newStudent(admissionState.userEmail);
+          await newStudent(admissionState.userEmail, batchInfo, examInfo);
         })();
       }
     }

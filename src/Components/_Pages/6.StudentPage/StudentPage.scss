@@ -1,0 +1,40 @@
+@import './Style';
+.student-page{
+    overflow:hidden;
+    .student-menu{
+        margin: 0;
+        padding: 1rem;
+        height: 100vh;
+        .col-md-6{
+            height: 48%;
+            margin-bottom: 2%;
+            .student-menu-opt{
+                position: relative;
+                height: 100%;
+                @include borderRadius(10px);
+                @include transition(all .5s ease);
+                overflow: hidden;
+                border: 1px solid;
+                backdrop-filter: blur(10px);
+                background-color: rgba(255,255,255, .1);
+                padding: .5rem;
+                &:hover{
+                    scale: 1.1;
+                    z-index: 15;
+                    .student-menu-opt-title{
+                        margin-top: -100%;
+                        color: black;
+                    }
+                }
+                .student-menu-opt-title{
+                    font-size: 2rem;
+                    text-align: center;
+                    width: 100%;
+                    color: #fff;
+                    font-weight: 700;
+                    @include transition(all .5s ease);
+                }
+            }
+        }
+    }
+}

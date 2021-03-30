@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
+//REDUX IMPORTS
+import { useDispatch } from "react-redux";
+import { selectUser } from "Store/user/actions";
+
 //UTILITIES IMPORTS
 import { checkCookies } from "../../../2.LoginPage/utilities";
 import { getFirstInfos, editProfile } from "./utilities";
@@ -29,6 +35,8 @@ export default function SignIn() {
     linkedin: linkedInState,
   });
   const [basicInfo, setBasicInfo] = useState(basicInfoState);
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
@@ -73,6 +81,10 @@ export default function SignIn() {
     // console.log("basicInfo", basicInfo);
     let result = await editProfile(access_token, basicInfo);
     // console.log("edit from comp", result);
+    if (result) {
+      dispatch(selectUser(result));
+      history.push(`/student-page/${result._id}`);
+    }
   };
 
   return (

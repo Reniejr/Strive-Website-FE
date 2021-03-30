@@ -17,10 +17,10 @@ export default function AdminPage() {
   return (
     <div id="admin-page">
       <Row className="page-header">
-        <Col xs={12} md={8} lg={6}>
+        <Col xs={12} md={7} lg={6}>
           <HeaderCard />
         </Col>
-        <Col xs={12} md={4} lg={6}>
+        <Col xs={12} md={5} lg={6}>
           <PageSettings />
         </Col>
       </Row>

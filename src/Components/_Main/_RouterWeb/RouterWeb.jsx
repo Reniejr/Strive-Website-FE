@@ -11,6 +11,7 @@ import Exam from "../../_Pages/4.Exam/Exam";
 import StartingPage from "../../_Pages/4.Exam/Sub_Components/StartingPage/StartingPage";
 import AdminExam from "../../_Pages/4.Exam/Sub_Components/AdminExam/AdminExam";
 import AdminPage from "../../_Pages/5.AdminPage/AdminPage";
+import StudentPage from "../../_Pages/6.StudentPage/StudentPage";
 
 export default function RouterWeb() {
   return (
@@ -37,6 +38,11 @@ export default function RouterWeb() {
           path="/admin-page/:userId"
           exact
           render={(props) => <AdminPage {...props} />}
+        />
+        <Route
+          path="/student-page/:userId"
+          exact
+          render={(props) => <StudentPage {...props} />}
         />
         <Route
           path="/benchmark"

@@ -30,7 +30,11 @@ export const editProfile = async (access_token, body) => {
   );
   const result = await response.json();
   // console.log("edit from utils", result);
-  return result;
+  if (response.ok) {
+    return result;
+  } else {
+    return null;
+  }
 };
 
 //FETCH GITHUB REPOS

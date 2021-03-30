@@ -1,8 +1,13 @@
 //POST NEW USER
-export const newStudent = async (email) => {
+export const newStudent = async (email, batch, exam) => {
   let body = {
     email,
     role: "student",
+    studentInfo: {
+      course: batch.course,
+      batch: batch.batch,
+      exams: [{ ...exam }],
+    },
   };
   const response = await fetch(`${process.env.REACT_APP_BASE_URL}/users`, {
     method: "POST",

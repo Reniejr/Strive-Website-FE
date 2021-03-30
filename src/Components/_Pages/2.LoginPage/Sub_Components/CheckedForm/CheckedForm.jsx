@@ -27,8 +27,8 @@ export default function CheckedForm({ data, functions }) {
             // id={props.data.id}
             placeholder={data.placeholder}
             required
-            onChange={functions ? functions.handleChange : null}
-            onKeyDown={functions ? functions.handleKeyDown : null}
+            onChange={functions.handleChange}
+            onKeyDown={functions.handleKeyDown}
             // value={data.value}
           />
           <Form.Control.Feedback type="invalid">

@@ -55,6 +55,8 @@ export const loginFn = async (bodyLogin) => {
   );
   const result = await response.json();
   console.log(result);
+  localStorage.setItem("access_token", result.access_token);
+  localStorage.setItem("refresh_token", result.refresh_token);
   return result;
 };
 
@@ -78,6 +80,8 @@ export const dashboardRedirect = async (role, id, history) => {
   switch (role) {
     case "admin":
       return history.push(`/admin-page/${id}`);
+    case "student":
+      return history.push(`/student-page/${id}`);
     default:
   }
 };
