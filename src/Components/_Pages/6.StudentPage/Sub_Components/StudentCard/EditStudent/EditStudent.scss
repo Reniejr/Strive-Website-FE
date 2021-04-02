@@ -1,0 +1,82 @@
+@import '../../../Style';
+
+.edit-student{
+    padding: 1rem;
+    height: 290px;
+    width: 95%;
+    overflow-y: auto;
+    header{
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        i{
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+    }
+    form{
+        font-size: .9rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .image-upload{
+            margin-bottom: 1rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            label{
+                position: relative;
+                cursor: pointer;
+                img{
+                    width: 75px;
+                    height: 75px;
+                    @include borderRadius(50%);
+                }
+                .edit-icon{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    font-size: .9rem;
+                    bottom: 0;
+                    right: -5%;
+                    background-color: rgb(231, 231, 231);
+                    padding: 7px;
+                    @include borderRadius(50%);
+                    
+                }
+            }
+            #profile{
+                display: none;
+            }
+            button{
+                @include strive-btn-default();
+                background-color: black;
+            }
+        }
+        .form-group{
+            label{
+                color: $primary;
+            }
+            input{
+                color: #fff;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                border-bottom: 1px solid $primary;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                font-weight: 700;
+            }
+            i{
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+        button[type=submit]{
+            @include strive-btn-default();
+        }
+    }
+}

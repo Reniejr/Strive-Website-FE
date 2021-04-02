@@ -50,6 +50,11 @@ export default function SignIn() {
           github: isGithubLinked(validate, github),
           linkedin: isLinkedInLinked(validate, linkedIn),
         });
+        if (isLink.linkedin) {
+          const url = history.location.search.replace("?access_token=", "");
+          // console.log("history", url);
+          localStorage.setItem("linkedIn_access", url);
+        }
       }
     })();
   }, []);

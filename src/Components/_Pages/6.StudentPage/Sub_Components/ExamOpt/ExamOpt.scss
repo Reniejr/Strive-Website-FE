@@ -30,7 +30,7 @@
     .last-benchmark{
         @include absoluteCentered();
         width: 90%;
-        @include transition(margin-top 1s ease);
+        @include transition(margin-top .5s ease);
         .CircularProgressbar{
             width: 100px;
             height: 100px;
@@ -51,7 +51,7 @@
         .exam-info{
             position: absolute;
             margin-top: 100%;
-            @include transition(all 1s ease);
+            @include transition(all .5s ease);
             p{
                 margin: 0;
                 font-size: .9rem;

@@ -1,1 +1,146 @@
 @import '../../Style';
+.hw-opt{
+    border-color: #fff;
+    color: rgba(255, 255, 255, .4);
+    &:hover{
+        color: black;
+        .bg-opt{
+            opacity: 1;
+            background: linear-gradient(119deg, rgba(0,0,0,1) 22%, rgba(67,67,67,1) 40%, rgba(0,0,0,1) 61%);
+
+        }
+        .last-hw, .last5-hw{
+            opacity: 1;
+        }
+        .last-hw{
+            .last-hw-container{
+                .task{
+                    button{
+                        color: $primary;
+                        border-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+    .bg-opt{
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        @include transition(opacity 1s ease);
+        z-index: -1;
+        .circular-logo{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            bottom: -150px;
+            right: -150px;
+            @include animation(circular-logo-student 20s linear infinite);
+            opacity: .5;
+        }
+        .logo-ray{
+            position: absolute;
+            @include borderRadius(50%);
+            border: 1px solid $primary;
+            opacity: 0;
+            box-shadow: 0px 0px 10px $primary;
+            @include animation(logo-ray-student 1.6s ease infinite);
+            @include transition(opacity 1s ease);
+            &:nth-of-type(1){
+                width: 320px;
+                height: 320px;
+                bottom: -160px;
+                right: -160px;
+                animation-delay: .3s;
+            }
+            &:nth-of-type(2){
+                width: 340px;
+                height: 340px;
+                bottom: -170px;
+                right: -170px;
+                animation-delay: .6s;
+            }
+        }
+    }
+    .last-hw{
+        opacity: .5;
+        color: #fff;
+        padding: 1rem;
+        margin-bottom: .5rem;
+        @include transition(all .5s ease);
+        h6{
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .last-hw-container{
+            display: flex;
+            align-items: center;
+            .task{
+                margin-right: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .fa-book-open{
+                    font-size: 75px;
+                    margin-bottom: 5px;
+                }
+                button{
+                    @include strive-btn-default();
+                    color: white;
+                    border-color: white;
+                    font-size: .7rem;
+                }
+            }
+            .last-hw-info{
+                p{
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    .last5-hw{
+        opacity: 0;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include transition(all .5s ease);
+        padding: .5rem;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0,0,0,.1);
+        font-size: .85rem;
+        font-weight: 600;
+        p{
+            margin-bottom: 5px;
+        }
+        .hw-bars{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .hw-bar{
+                width: 40px;
+                height: 5px;
+                content:' ';
+                margin: 0 .5rem;
+            }
+        }
+    }
+}
+
+
+@keyframes circular-logo-student{
+    0%{}
+    100%{
+        rotate: 360deg;
+    }
+}
+@keyframes logo-ray-student{
+    0%{}
+    100%{opacity: 1;}
+}

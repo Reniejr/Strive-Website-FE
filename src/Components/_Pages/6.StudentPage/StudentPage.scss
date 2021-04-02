@@ -35,6 +35,23 @@
                     @include transition(all .5s ease);
                 }
             }
+            .linkedIn-opt{
+                border-color: #0274b3;
+            }
+            .hw-opt{
+                border-color: $primary;
+            }
+            .hw-opt, .attendance-opt{
+                &:hover{
+                    .student-menu-opt-title{
+                        bottom: -100%;
+                    }
+                }
+                .student-menu-opt-title{
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
         }
     }
 }
