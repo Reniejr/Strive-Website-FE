@@ -1,11 +1,40 @@
-import Cookies from "js-cookie";
-
 //CHECK COOKIES
 export const checkCookies = () => {
+  const url = new URL(window.location.href);
+  const validate = url.searchParams.get("validate");
+  const github = url.searchParams.get("github");
+  const linkedIn = url.searchParams.get("linkedin");
+
+  if (validate !== null) {
+    if (localStorage.getItem("validate") === null) {
+      localStorage.setItem("validate", validate);
+    }
+  }
+  if (github !== null) {
+    if (localStorage.getItem("github") === null) {
+      localStorage.setItem("github", github);
+    }
+  }
+  if (linkedIn !== null && localStorage.getItem("linkedin") === null) {
+    localStorage.setItem("linkedin", linkedIn);
+  }
+
   return {
-    validate: Cookies.get("validate") !== undefined ? true : false,
-    github: Cookies.get("github") !== undefined ? true : false,
-    linkedIn: Cookies.get("linkedin") !== undefined ? true : false,
+    validate:
+      localStorage.getItem("validate") !== null &&
+      localStorage.getItem("validate") === "true"
+        ? true
+        : false,
+    github:
+      localStorage.getItem("github") !== null &&
+      localStorage.getItem("github") === "true"
+        ? true
+        : false,
+    linkedIn:
+      localStorage.getItem("linkedin") !== null &&
+      localStorage.getItem("linkedin") === "true"
+        ? true
+        : false,
   };
 };
 

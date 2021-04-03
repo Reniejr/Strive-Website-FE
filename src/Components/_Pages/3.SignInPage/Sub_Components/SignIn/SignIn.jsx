@@ -50,6 +50,12 @@ export default function SignIn() {
           github: isGithubLinked(validate, github),
           linkedin: isLinkedInLinked(validate, linkedIn),
         });
+        if (!github) {
+          localStorage.removeItem("github");
+        }
+        if (!linkedIn) {
+          localStorage.removeItem("linkedin");
+        }
         if (isLink.linkedin) {
           const url = history.location.search.replace("?access_token=", "");
           // console.log("history", url);
@@ -87,6 +93,18 @@ export default function SignIn() {
     let result = await editProfile(access_token, basicInfo);
     // console.log("edit from comp", result);
     if (result) {
+      const credentials = {
+        profile: result.profile,
+        email: result.email,
+        password: result.password,
+      };
+      localStorage.setItem(
+        `user-${result.firstName}`,
+        JSON.stringify(credentials)
+      );
+      localStorage.removeItem("validate");
+      localStorage.removeItem("github");
+      localStorage.removeItem("linkedin");
       dispatch(selectUser(result));
       history.push(`/student-page/${result._id}`);
     }

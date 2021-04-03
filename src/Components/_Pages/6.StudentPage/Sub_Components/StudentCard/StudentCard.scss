@@ -6,10 +6,10 @@
     @include borderRadius(10px);
     position:absolute;
     // @include absoluteCentered();
-    width: 450px;
-    height: 300px;
+    width: 550px;
+    height: 420px;
     min-width: 375px;
-    max-height: 300px;
+    max-height: 350px;
     padding: .5rem;
     background: linear-gradient(119deg, rgba(0,0,0,1) 22%, rgba(67,67,67,1) 40%, rgba(0,0,0,1) 61%);
     z-index: 10;

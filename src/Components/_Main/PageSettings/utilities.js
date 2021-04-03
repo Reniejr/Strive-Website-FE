@@ -21,6 +21,7 @@ export const uploadProfile = async () => {
       }),
     }
   );
+  console.log(response);
   //   const result = await response.json();
   //   console.log(result);
 };

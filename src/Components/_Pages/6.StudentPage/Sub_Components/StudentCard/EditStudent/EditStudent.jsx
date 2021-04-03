@@ -29,6 +29,9 @@ export default function EditStudent({ state, functions }) {
   const [pwd, setPwd] = useState("password");
   const [imgConfirm, setImgConfirm] = useState(false);
   const [user, setUser] = useState(userForm(userInfo));
+  const [credentials, setCredentials] = useState(
+    localStorage.getItem(`user-${userInfo.firstName}`)
+  );
 
   //ONCHANGE
   const fillForm = (e) => {
@@ -45,8 +48,18 @@ export default function EditStudent({ state, functions }) {
   //CONFIRM EDIT
   const confirmEdit = async (e) => {
     e.preventDefault();
+    localStorage.removeItem(`user-${userInfo.firstName}`);
     await editProfile(user);
     const editedUser = await getProfile();
+    const newCredentials = {
+      profile: editedUser.profile,
+      email: editedUser.email,
+      password: user.password,
+    };
+    localStorage.setItem(
+      `user-${editedUser.firstName}`,
+      JSON.stringify(newCredentials)
+    );
     dispatch(selectUser(editedUser));
     functions.flipFn();
   };
