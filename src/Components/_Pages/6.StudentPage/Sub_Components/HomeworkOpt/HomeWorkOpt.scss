@@ -97,8 +97,29 @@
                 }
             }
             .last-hw-info{
-                p{
-                    margin-bottom: 5px;
+                display: flex;
+                .info{
+                    margin-right: 2rem;
+                    p{
+                        max-width: 250px;
+                        margin-bottom: 5px;
+                        font-size: .9rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        .fa-circle{
+                            font-size: .95rem;
+                            margin-right: .5rem;
+                        }
+                        span{
+                            font-size: 1rem;
+                            font-weight: 700;
+                            a{
+                                font-size: .8rem;
+                                color: #fff;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -128,6 +149,7 @@
                 height: 5px;
                 content:' ';
                 margin: 0 .5rem;
+                cursor: pointer;
             }
         }
     }
