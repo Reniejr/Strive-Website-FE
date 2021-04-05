@@ -20,7 +20,6 @@ export default function Task({ state, functions }) {
   const dispatch = useDispatch();
 
   const [repos, setRepos] = useState([]);
-  const [selectedRepo, setSelectedRepo] = useState({});
   const [listShow, setListShow] = useState(false);
   const [filteredRepos, setFilteredRepos] = useState([]);
   const [submitHw, setSubmitHw] = useState({

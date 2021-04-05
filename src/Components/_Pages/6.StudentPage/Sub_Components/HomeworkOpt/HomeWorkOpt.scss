@@ -66,11 +66,21 @@
             }
         }
     }
+    .all-hw-show{
+        text-align: center;
+        font-size: .8rem;
+        color: $primary;
+        cursor: pointer;
+        margin: 0;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
     .last-hw{
         opacity: .5;
         color: #fff;
         padding: 1rem;
-        margin-bottom: .5rem;
+        // margin-bottom: .5rem;
         @include transition(all .5s ease);
         h6{
             font-size: 1.5rem;

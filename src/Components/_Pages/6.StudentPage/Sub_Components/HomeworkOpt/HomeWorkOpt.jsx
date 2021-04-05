@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 //PERSONAL COMPONENTS IMPORTS
 import Task from "./Task/Task";
+import AllHw from "./AllHw/AllHw";
 
 //ASSETS IMPORTS
 import { CircLogo } from "Components/_Main/Assets/Assets";
@@ -20,6 +21,7 @@ export default function HomeWorkOpt() {
   const [show, setShow] = useState(false);
   const [hw, setHw] = useState(hwInfo[0]);
   const [hwTitle, setHwTitle] = useState("Last HomeWork");
+  const [showAllHw, setShowAllHw] = useState(false);
 
   useEffect(() => {
     setHwTitle(hw === hwInfo[0] ? "Last HomeWork" : `${hw.module} - ${hw.day}`);
@@ -29,9 +31,18 @@ export default function HomeWorkOpt() {
     setHwInfo(homeInfo);
   }, [homeInfo]);
 
+  const viewTask = (homework) => {
+    setHw(homework);
+    setShow(true);
+  };
+
   return (
     <div className="hw-opt student-menu-opt">
       <Task state={{ show, hw }} functions={{ handleClose: setShow }} />
+      <AllHw
+        state={{ show: showAllHw }}
+        functions={{ handleClose: setShowAllHw, viewTask }}
+      />
       <p className="student-menu-opt-title">HomeWorks</p>
       <div className="bg-opt">
         <CircLogo />
@@ -84,6 +95,9 @@ export default function HomeWorkOpt() {
           </div>
         </div>
       </div>
+      <p className="all-hw-show" onClick={() => setShowAllHw(true)}>
+        View All HomewWorks
+      </p>
       <div className="last5-hw">
         <p>Last 5 homeworks</p>
         <div className="hw-bars">

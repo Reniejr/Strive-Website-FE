@@ -111,6 +111,8 @@ export const dashboardRedirect = async (role, id, history) => {
       return history.push(`/admin-page/${id}`);
     case "student":
       return history.push(`/student-page/${id}`);
+    case "teacher":
+      return history.push(`/teacher-page/${id}`);
     default:
   }
 };
