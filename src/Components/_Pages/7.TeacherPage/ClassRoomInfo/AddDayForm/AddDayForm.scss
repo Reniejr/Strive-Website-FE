@@ -1,0 +1,81 @@
+@import '../../Style';
+
+.add-day-form{
+    position: absolute;
+    top: 3rem;
+    left: 2%;
+    height: calc(100% - 3rem);
+    width: 96%;
+    overflow-y: auto;
+    @include transition(all 1s ease);
+    .close-btn{
+        @include strive-btn-default();
+        padding: 0;
+        border: none;
+        position: absolute;
+        z-index: 20;
+        top: 5px;
+        left: 10px;
+        &:hover{
+            background-color: transparent;
+            color: $primary;
+        }
+    }
+    form{
+        @include borderRadius(5px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(255,255,255, .1);
+        padding: 1rem;
+        .row{
+            width: 100%;
+            height: auto;
+            margin: 0;
+            border: none;
+            margin-top: 5px;
+        }
+        button{
+            @include strive-btn-default();
+            background-color: $primary;
+            color: $colorText;
+            &:hover{
+                background-color: transparent;
+                color: $primary;
+            }
+        }
+    }
+}
+input{
+    color: #fff;
+    &:hover{
+        background-color: transparent;
+    }
+}
+input[type=number]{
+    border: 2px solid $primary;
+    background-color: transparent;
+    color: $primary;
+    font-weight: 600;
+    &:hover{
+        background-color: transparent;
+        color: $primary;
+    }
+    &:focus{
+        color: $primary;
+        background-color: transparent;
+    }
+}
+input[type=text]{
+    @include strive-btn-default();
+    border: none;
+    border-bottom: 2px solid $primary;
+    @include borderRadius(0px);
+    color: #fff;
+    &:hover{
+        background-color: transparent;
+        color: #fff;
+    }
+    &:focus{
+        color: #fff;
+        background-color: transparent;
+    }
+}

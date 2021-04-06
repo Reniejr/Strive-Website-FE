@@ -10,6 +10,8 @@ nav.user-sidebar{
     min-width: 50px;
     height: 100vh;
     padding: 1rem 0;
+    z-index: 100;
+    border-left: 1px solid $primary;
     &:hover{
         min-width: 130px;
     }

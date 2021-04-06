@@ -1,0 +1,83 @@
+@import '../Style';
+.classroom-info{
+    color: #fff;
+    .row{
+        width: calc(100% - 56px);
+        margin: 0;
+        height: 70vh;
+        border: 1px solid $primary;
+        @include borderRadius(10px);
+        overflow: hidden;
+        .col-md-3, .col-md-6{
+            border: 1px solid rgba(255, 255, 255, .1);
+            padding: 1rem;
+            height: 100%;
+            overflow: hidden;
+            h5{
+                font-weight: 600;
+            }
+            ul{
+                width: 100%;
+                list-style: none;
+                padding: 0;
+                li{
+                    width: 100%;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+        .col-md-3:nth-of-type(1){
+            ul{
+                padding: 10px;
+                @include borderRadius(5px);
+                backdrop-filter: blur(10px);
+                background-color: rgba(255,255,255, .1);
+                li{
+                    font-size: .75rem;
+                    span{
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: $primary;
+                    }
+                }
+            }
+        }
+        .col-md-3:nth-of-type(2){
+            ul{
+                padding: 10px;
+                @include borderRadius(5px);
+                li{
+                    padding: 3px 10px;
+                    min-height: 40px;
+                    backdrop-filter: blur(10px);
+                    background-color: rgba(255,255,255, .1);
+                    @include borderRadius(5px);
+                    @include flexBox(row, none, center);
+                    span{
+                        font-size: .8rem;
+                        color: white;
+                        span{
+                            color: $primary;
+                            font-weight: 600;
+                            font-size: 1rem;
+                        }
+                    }
+                    .fa-plus-circle{
+                        font-size: 1.3rem;
+                        @include transition(all .3s ease);
+                    }
+                    &:nth-of-type(1){
+                        @include flexBox(row, center, center);
+                        &:hover{
+                            background-color: rgba($color: $primary, $alpha: 1);
+                            color: black;
+                            .fa-plus-circle{
+                                @include transform(rotate(360deg));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
