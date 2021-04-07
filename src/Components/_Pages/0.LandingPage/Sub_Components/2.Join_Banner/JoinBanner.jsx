@@ -3,7 +3,7 @@ import React from "react";
 //STYLE IMPORTS
 import "./JoinBanner.scss";
 
-export default function JoinBanner() {
+export default function JoinBanner({ functions }) {
   return (
     <section id="join-banner">
       <div>
@@ -11,7 +11,7 @@ export default function JoinBanner() {
           <h2>Join the next batch</h2>
           <p>Kick off your career in tech with our AI or Web programs</p>
         </span>
-        <button>Apply Now</button>
+        <button onClick={functions.setShow}>Apply Now</button>
       </div>
     </section>
   );

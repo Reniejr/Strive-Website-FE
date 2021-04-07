@@ -148,3 +148,12 @@ export const createRoom = async (body) => {
   console.log(result);
   return result;
 };
+//GET BENCHMARK LIST
+export const getBenchmarkList = async () => {
+  const response = await fetch(
+    `${process.env.REACT_APP_SOCKET_BASE_URL}/socket-room`
+  );
+  const result = await response.json();
+  //   console.log("from utils", result);
+  return result;
+};

@@ -6,7 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 //STYLE IMPORTS
 import "./WhyStrive.scss";
 
-export default function WhyStrive() {
+export default function WhyStrive({ functions }) {
   return (
     <section id="why-strive">
       <Container>
@@ -63,7 +63,7 @@ export default function WhyStrive() {
           </Col>
         </Row>
       </Container>
-      <button>Apply Now</button>
+      <button onClick={functions.setShow}>Apply Now</button>
     </section>
   );
 }

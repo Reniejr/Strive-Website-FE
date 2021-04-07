@@ -12,7 +12,7 @@ import { Container, Row, Col } from "react-bootstrap";
 //STYLE IMPORTS
 import "./StriveDifference.scss";
 
-export default function StriveDifference() {
+export default function StriveDifference({ functions }) {
   return (
     <section id="strive-difference">
       <img src="./assets/backgr03.png" alt="" className="bg-img"></img>
@@ -72,7 +72,9 @@ export default function StriveDifference() {
           </Col>
         </Row>
         <ShowCase />
-        <button className="strive-btn">Apply Now</button>
+        <button className="strive-btn" onClick={functions.setShow}>
+          Apply Now
+        </button>
       </Container>
     </section>
   );
