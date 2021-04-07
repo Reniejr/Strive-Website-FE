@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 //UTILITIES IMPORTS
 import { getTest } from "../utilities";
+import { getBenchmarkList } from "Components/_Utilities";
 
 //PERSONAL COMPONENTS IMPORTS
 import {
@@ -20,6 +21,8 @@ export default function JoinStriveModal({ state, functions }) {
   const [course, setCourse] = useState("Web");
   const [test, setTest] = useState("");
   const [success, setSuccess] = useState(false);
+  const [webTest, setWebTest] = useState("");
+  const [aiTest, setAiTest] = useState("");
 
   const fillEmail = async (e) => {
     if (e.keyCode === 13 || e.key === "Enter") {
@@ -30,11 +33,29 @@ export default function JoinStriveModal({ state, functions }) {
   };
 
   useEffect(() => {
+    (async () => {
+      const list = await getBenchmarkList();
+      const webList = list.filter((test) => test.course === "Web");
+      const aiList = list.filter((test) => test.course === "AI");
+      console.log(list);
+      if (webList.length > 0) {
+        const latestWeb = webList[webList.length - 1];
+        setWebTest(latestWeb._id);
+        setTest(latestWeb._id);
+      }
+      if (aiList.length > 0) {
+        const latestAI = aiList[aiList.length - 1];
+        setAiTest(latestAI._id);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
     if (course === "Web") {
-      setTest(state.webTest);
+      setTest(webTest);
     }
     if (course === "AI") {
-      setTest(state.aiTest);
+      setTest(aiTest);
     }
   }, [course]);
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 //PERSONAL COMPONENTS IMPORTS
 import Banner from "./Sub_Components/0.Banner/Banner";
@@ -16,37 +16,16 @@ import Faq from "./Sub_Components/11.Faq/Faq";
 import Footer from "./Sub_Components/12.Footer/Footer";
 import JoinStriveModal from "./Sub_Components/13.JoinStriveModal/JoinStriveModal";
 
-//UTILITIES IMPORTS
-import { getBenchmarkList } from "Components/_Utilities";
-
 //STYLE
 import "./LandingPage.scss";
 
 export default function LandingPage() {
-  const [webTest, setWebTest] = useState("");
-  const [aiTest, setAiTest] = useState("");
-  const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      const list = await getBenchmarkList();
-      const webList = list.filter((test) => test.course === "Web");
-      const aiList = list.filter((test) => test.course === "AI");
-      if (webList.length > 0) {
-        const latestWeb = webList[webList.length - 1];
-        setWebTest(latestWeb._id);
-      }
-      if (aiList.length > 0) {
-        const latestAI = aiList[aiList.length - 1];
-        setAiTest(latestAI._id);
-      }
-    })();
-  }, []);
+  const [show, setShow] = useState(false);
 
   return (
     <div id="landing-page">
       <JoinStriveModal
-        state={{ show, webTest, aiTest }}
+        state={{ show }}
         functions={{ handleClose: () => setShow(false) }}
       />
       <Banner functions={{ setShow: () => setShow(true) }} />
