@@ -44,7 +44,12 @@ export default function Results({ state, functions }) {
       if (userResult >= minimum) {
         // console.log("success", admissionState);
         (async () => {
-          await newStudent(admissionState.userEmail, batchInfo, examInfo);
+          await newStudent(
+            admissionState.userEmail,
+            batchInfo,
+            examInfo,
+            state.batchId
+          );
         })();
       }
     }

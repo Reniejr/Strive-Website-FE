@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //REDUX IMPORTS
 import { useSelector, useDispatch } from "react-redux";
@@ -40,6 +41,7 @@ export default function TestDetail({ state, functions }) {
             </Col>
           </>
         ) : null}
+        <Link to="/benchmark/admin">Go to monitor</Link>
       </Row>
       <Row>
         <Col xs={12} lg={6}>

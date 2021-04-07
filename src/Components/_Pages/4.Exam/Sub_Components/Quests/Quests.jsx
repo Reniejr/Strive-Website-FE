@@ -172,6 +172,7 @@ export default function Quests({ state, functions }) {
           quests: state.quests,
           showResult: showResult,
           answerList: state.answerList,
+          batchId: state.batchId,
         }}
       />
     </div>

@@ -173,6 +173,7 @@ export default function StartingPage(props) {
           isStarted: connect,
           time: timer,
           answerList: userAnswer,
+          batchId: examDetail.batchId,
         }}
         functions={{ clickAnswer: giveAnswers }}
       />

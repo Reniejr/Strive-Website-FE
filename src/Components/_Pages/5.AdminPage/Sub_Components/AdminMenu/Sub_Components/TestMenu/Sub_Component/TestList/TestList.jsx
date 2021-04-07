@@ -26,7 +26,7 @@ export default function TestList({ functions }) {
   return (
     <div className="test-list opt">
       <ul className="menu-list">
-        <li onClick={() => dispatch(setSubTitle("add-batch"))}>
+        <li onClick={() => dispatch(setSubTitle("add-test"))}>
           <i className="fas fa-plus-circle"></i>
           Add Admission Test
         </li>

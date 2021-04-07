@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 //PERSONAL COMPONENTS IMPORTS
 import TestList from "./Sub_Component/TestList/TestList";
+import AddTestForm from "./Sub_Component/AddTestForm/AddTestForm";
+import TestDetail from "./Sub_Component/TestDetail/TestDetail";
 
 //REDUX IMPORTS
 import { useSelector, useDispatch } from "react-redux";
@@ -12,7 +14,6 @@ import { testInfo } from "../../values";
 
 //STYLE IMPORTS
 import "./TestMenu.scss";
-import TestDetail from "./Sub_Component/TestDetail/TestDetail";
 
 export default function TestMenu() {
   //STATE
@@ -39,6 +40,7 @@ export default function TestMenu() {
     >
       <TestList functions={{ showTest }} />
       <TestDetail state={{ infos, test }} />
+      <AddTestForm />
     </div>
   );
 }

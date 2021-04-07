@@ -58,12 +58,12 @@ export const uploadProfile = async () => {
   //   const result = await response.json();
   //   console.log(result);
 };
-export const uploadFile = async () => {
+export const uploadFile = async (id, lesson) => {
   const inputFile = document.querySelector("#homework");
   let formData = new FormData();
   formData.append("file", inputFile.files[0]);
   const response = await fetch(
-    `${process.env.REACT_APP_BASE_URL}/file-upload`,
+    `${process.env.REACT_APP_BASE_URL}/file-upload/${id}?module=${lesson.module}&day=${lesson.day}`,
     {
       method: "POST",
       body: formData,
@@ -116,9 +116,26 @@ export const logoutFetch = async () => {
 
 //POST LESSON
 export const newLesson = async (body, id) => {
-  console.log(body);
+  body.module = `M${body.module}`;
+  body.day = `D${body.day}`;
   const response = await fetch(
     `${process.env.REACT_APP_BASE_URL}/batch/lessons/${id}`,
+    {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
+    }
+  );
+  const result = await response.json();
+  console.log(result);
+  return result;
+};
+
+export const createRoom = async (body) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_SOCKET_BASE_URL}/socket-room`,
     {
       method: "POST",
       body: JSON.stringify(body),

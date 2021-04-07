@@ -1,17 +1,27 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
+//UTILITIES IMPORTS
+import { logoutFetch } from "Components/_Utilities";
 
 //REDUX IMPORTS
 import { useSelector } from "react-redux";
 
 //ASSETS IMPORTS
-import bgLogo from "./assets/backgr03.png";
 import texture from "./assets/wood-texture.jpg";
 
 //STYLE IMPORTS
 import "./HeaderCard.scss";
 
-export default function HeaderCard() {
+export default function HeaderCard({ functions }) {
   const userState = useSelector((state) => state.user.user);
+  const history = useHistory();
+
+  const logout = async () => {
+    history.push("/");
+    await logoutFetch();
+  };
+
   return (
     <div className="header-card">
       <svg
@@ -39,6 +49,15 @@ export default function HeaderCard() {
       <div className="info">
         <h4>{userState.occupation}</h4>
       </div>
+      {userState.role === "admin" || userState.role === "teacher" ? (
+        <div className="controls">
+          <i
+            className="fas fa-user-edit"
+            onClick={() => functions.showModal(true)}
+          ></i>
+          <i className="fas fa-sign-out-alt" onClick={() => logout()}></i>
+        </div>
+      ) : null}
     </div>
   );
 }

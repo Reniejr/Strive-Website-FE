@@ -38,7 +38,11 @@ export default function HomeWorkOpt() {
 
   return (
     <div className="hw-opt student-menu-opt">
-      <Task state={{ show, hw }} functions={{ handleClose: setShow }} />
+      {hw ? (
+        <Task state={{ show, hw }} functions={{ handleClose: setShow }} />
+      ) : (
+        <p>No Tasks</p>
+      )}
       <AllHw
         state={{ show: showAllHw }}
         functions={{ handleClose: setShowAllHw, viewTask }}
@@ -49,52 +53,56 @@ export default function HomeWorkOpt() {
         <div className="logo-ray"></div>
         <div className="logo-ray"></div>
       </div>
-      <div className="last-hw">
-        <h6>{hwTitle}</h6>
-        <div className="last-hw-container">
-          <div className="task">
-            <i className="fas fa-book-open"></i>
-            <button
-              onClick={() => {
-                setShow(true);
-              }}
-            >
-              View Task
-            </button>
-          </div>
-          <div className="last-hw-info">
-            <div className="info">
-              <p>
-                Module : <span>{hw.module}</span>{" "}
-              </p>
-              <p>
-                Day : <span>{hw.day}</span>{" "}
-              </p>
+      {hw ? (
+        <div className="last-hw">
+          <h6>{hwTitle}</h6>
+          <div className="last-hw-container">
+            <div className="task">
+              <i className="fas fa-book-open"></i>
+              <button
+                onClick={() => {
+                  setShow(true);
+                }}
+              >
+                View Task
+              </button>
             </div>
-            <div className="info">
-              <p>
-                <i
-                  class="fas fa-circle"
-                  style={{ color: hw.completed ? "#00ff84" : "red" }}
-                ></i>
-                Completed : <span>{hw.completed ? "Yes" : "No"}</span>
-              </p>
-              <p>
-                <i
-                  class="fas fa-circle"
-                  style={{ color: hw.githubRepo ? "#00ff84" : "red" }}
-                ></i>
-                Github :{" "}
-                <span>
-                  <a href={hw.githubRepo} target="_blank">
-                    {hw.githubRepo ? hw.githubRepo : "No"}
-                  </a>
-                </span>
-              </p>
+            <div className="last-hw-info">
+              <div className="info">
+                <p>
+                  Module : <span>{hw.module}</span>{" "}
+                </p>
+                <p>
+                  Day : <span>{hw.day}</span>{" "}
+                </p>
+              </div>
+              <div className="info">
+                <p>
+                  <i
+                    class="fas fa-circle"
+                    style={{ color: hw.completed ? "#00ff84" : "red" }}
+                  ></i>
+                  Completed : <span>{hw.completed ? "Yes" : "No"}</span>
+                </p>
+                <p>
+                  <i
+                    class="fas fa-circle"
+                    style={{ color: hw.githubRepo ? "#00ff84" : "red" }}
+                  ></i>
+                  Github :{" "}
+                  <span>
+                    <a href={hw.githubRepo} target="_blank">
+                      {hw.githubRepo ? hw.githubRepo : "No"}
+                    </a>
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <p>No Homeworks</p>
+      )}
       <p className="all-hw-show" onClick={() => setShowAllHw(true)}>
         View All HomewWorks
       </p>

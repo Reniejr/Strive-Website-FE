@@ -42,40 +42,40 @@
                 color: $primary;
             }
         }
-    }
-}
-input{
-    color: #fff;
-    &:hover{
-        background-color: transparent;
-    }
-}
-input[type=number]{
-    border: 2px solid $primary;
-    background-color: transparent;
-    color: $primary;
-    font-weight: 600;
-    &:hover{
-        background-color: transparent;
-        color: $primary;
-    }
-    &:focus{
-        color: $primary;
-        background-color: transparent;
-    }
-}
-input[type=text]{
-    @include strive-btn-default();
-    border: none;
-    border-bottom: 2px solid $primary;
-    @include borderRadius(0px);
-    color: #fff;
-    &:hover{
-        background-color: transparent;
-        color: #fff;
-    }
-    &:focus{
-        color: #fff;
-        background-color: transparent;
+        input{
+            color: #fff;
+            &:hover{
+                background-color: transparent;
+            }
+        }
+        input[type=number]{
+            border: 2px solid $primary;
+            background-color: transparent;
+            color: $primary;
+            font-weight: 600;
+            &:hover{
+                background-color: transparent;
+                color: $primary;
+            }
+            &:focus{
+                color: $primary;
+                background-color: transparent;
+            }
+        }
+        input[type=text]{
+            @include strive-btn-default();
+            border: none;
+            border-bottom: 2px solid $primary;
+            @include borderRadius(0px);
+            color: #fff;
+            &:hover{
+                background-color: transparent;
+                color: #fff;
+            }
+            &:focus{
+                color: #fff;
+                background-color: transparent;
+            }
+        }
     }
 }

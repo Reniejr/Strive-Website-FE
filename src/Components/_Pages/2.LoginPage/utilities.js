@@ -46,6 +46,7 @@ export const tokenFormState = {
 
 //GET FIRST ACCESS_TOKEN
 export const getFirstAccessToken = async (body) => {
+  // console.log(body);
   const response = await fetch(
     `${process.env.REACT_APP_BASE_URL}/users/first-authorize`,
     {
@@ -106,6 +107,7 @@ export const getProfile = async (token) => {
 
 //EXPORT DASHBOARD REDIRECT
 export const dashboardRedirect = async (role, id, history) => {
+  localStorage.removeItem("validate");
   switch (role) {
     case "admin":
       return history.push(`/admin-page/${id}`);

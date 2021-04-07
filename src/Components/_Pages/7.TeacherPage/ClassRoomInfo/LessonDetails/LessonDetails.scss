@@ -1,0 +1,44 @@
+@import '../../Style';
+
+.lesson-details{
+    height: 90%;
+    overflow-y: auto;
+    @include transition(all 1s ease);
+    padding: .5rem;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, .1);
+    .row{
+        height: auto !important;
+        border: none !important;
+        .col-4{
+            @include flexBox(row, center, center);
+            &:nth-of-type(1), &:nth-of-type(2){
+                font-size: 3rem;
+                font-weight: 700;
+                color: $primary;
+            }
+        }
+    }
+    form{
+        width: 98%;
+        .form-group{
+            @include flexBox(row, none, center);
+            margin-bottom: 1rem;
+            label{
+                width:330px;
+            }
+            input{
+                @include strive-input-text();
+                background-color: transparent;
+                // border-bottom: 2px solid $primary;
+                @include borderRadius(0px);
+                padding: 0 10px;
+                height: 24px;
+                color: #fff;
+                &:focus{
+                    border: none !important;
+                }
+            }
+        }
+    }
+}

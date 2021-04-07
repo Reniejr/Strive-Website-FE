@@ -80,4 +80,40 @@
             }
         }
     }
+    .batch-list{
+        height: 30vh;
+        overflow-y: auto;
+        width: 100%;
+        padding: 0 1rem;
+        h5{
+            padding: 10px;
+            margin: 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: calc(100% - 56px);
+            li{
+                @include borderRadius(5px);
+                border: 2px solid $primary;
+                padding: 10px;
+                @include flexBox(row, space-between, center);
+                margin-bottom: .5rem;
+                background-color: #fff;
+                color: $colorText;
+                font-weight: 700;
+                button{
+                    @include strive-btn-default();
+                    font-size: .8rem;
+                    background-color: $primary;
+                    color: $colorText;
+                    &:hover{
+                        background-color: #fff;
+                        color: $colorText;
+                    }
+                }
+            }
+        }
+    }
 }

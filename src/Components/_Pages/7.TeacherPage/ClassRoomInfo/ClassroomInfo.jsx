@@ -12,6 +12,7 @@ import { activeBatchKeys, activeDayKeys } from "../values";
 //PERSONAL COMPONENTS IMPORTS
 import BG01 from "Components/_Main/Backgrounds/BG01/BG01";
 import AddDayForm from "./AddDayForm/AddDayForm";
+import LessonDetails from "./LessonDetails/LessonDetails";
 
 //BOOTSTRAP IMPORTS
 import { Row, Col } from "react-bootstrap";
@@ -35,8 +36,14 @@ export default function ClassroomInfo({ state }) {
       setClassList(list);
       const lastBatch = list[list.length - 1];
       setActiveBatch(lastBatch);
+      setActiveDay(lastBatch.lessons[lastBatch.lessons.length - 1]);
     })();
   }, []);
+
+  const changeBatch = (batch) => {
+    setActiveBatch(batch);
+    setActiveDay(batch.lessons[batch.lessons.length - 1]);
+  };
 
   return (
     <div
@@ -70,7 +77,7 @@ export default function ClassroomInfo({ state }) {
             </li>
             {activeBatch.lessons.map((l, lI) => {
               return (
-                <li key={lI}>
+                <li key={lI} onClick={() => setActiveDay(l)}>
                   <span>
                     Module: <span>{l.module}</span>
                   </span>
@@ -88,13 +95,23 @@ export default function ClassroomInfo({ state }) {
             state={{ batch: activeBatch, show: addLesson }}
             functions={{ show: setAddLesson }}
           />
+          <LessonDetails
+            state={{ batch: activeBatch, show: addLesson, day: activeDay }}
+          />
         </Col>
       </Row>
       <div className="batch-list">
-        Batch List
+        <h5>Batch List</h5>
         <ul>
           {classList.map((cl, clI) => {
-            return <li key={clI}>Batch</li>;
+            return (
+              <li key={clI}>
+                <span>{cl.name}</span>
+                <span>Students : {cl.studentList.length}</span>
+                <span>Lessons : {cl.lessons.length}</span>
+                <button onClick={() => changeBatch(cl)}>View Batch</button>
+              </li>
+            );
           })}
         </ul>
       </div>

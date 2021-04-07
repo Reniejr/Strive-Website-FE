@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 //VALUES IMPORTS
 import { lessonForm, activeDayKeys } from "../../values";
@@ -7,15 +7,13 @@ import { lessonForm, activeDayKeys } from "../../values";
 import { Form, Row, Col } from "react-bootstrap";
 
 //UTILITIES IMPORTS
-import { uploadFile, newLesson } from "Components/_Utilities";
+import { newLesson } from "Components/_Utilities";
 
 //STYLE IMPORTS
 import "./AddDayForm.scss";
-import AddFileInput from "./AddFileInput/AddFileInput";
 
 export default function AddDayForm({ state, functions }) {
   const [info, setInfo] = useState(activeDayKeys);
-  const [uploadConfirm, setUploadConfirm] = useState(false);
 
   //ONCHANGE
   const fillForm = (e) => {
@@ -23,17 +21,6 @@ export default function AddDayForm({ state, functions }) {
     let currentId = e.currentTarget.id;
     newInfo[currentId] = e.currentTarget.value;
     setInfo(newInfo);
-  };
-
-  useEffect(() => {
-    setUploadConfirm(true);
-  }, [info.homework]);
-
-  //CONFIRM FILE
-  const fileConfirm = async (e) => {
-    e.preventDefault();
-    setUploadConfirm(false);
-    await uploadFile();
   };
 
   const postLesson = async (e) => {
@@ -68,12 +55,6 @@ export default function AddDayForm({ state, functions }) {
               </Col>
             );
           })}
-          <Col xs={4}>
-            <AddFileInput
-              info={{ info, uploadConfirm }}
-              functions={{ setInfo, fileConfirm }}
-            />
-          </Col>
         </Row>
         {lessonForm.slice(2, 7).map((l, lI) => {
           return (

@@ -61,10 +61,16 @@ export default function LinkedInOpt() {
         <div className="profile-linkedin">
           <div className="basic-info">
             <p>
-              First Name: <span>{linkedInInfo.firstName}</span>{" "}
+              First Name:{" "}
+              <span>
+                {linkedInInfo ? linkedInInfo.firstName : "Not Sign in"}
+              </span>{" "}
             </p>
             <p>
-              Last Name: <span>{linkedInInfo.lastName}</span>{" "}
+              Last Name:{" "}
+              <span>
+                {linkedInInfo ? linkedInInfo.lastName : "Not Sign in"}
+              </span>{" "}
             </p>
             <p>
               Address: <span></span>{" "}
@@ -74,7 +80,10 @@ export default function LinkedInOpt() {
             </p>
           </div>
           <div className="profile-img">
-            <img src={linkedInInfo.linkedInPic} alt="" />
+            <img
+              src={linkedInInfo ? linkedInInfo.linkedInPic : "Not Sign in"}
+              alt=""
+            />
           </div>
         </div>
       </div>

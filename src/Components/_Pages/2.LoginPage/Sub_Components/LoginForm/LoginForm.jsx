@@ -23,19 +23,14 @@ import "./LoginForm.scss";
 export default function LoginForm({ functions, state }) {
   //STATE
   const [loginFill, setLoginFill] = useState({ email: "", password: "" });
-  const [savedAcc, setSavedAcc] = useState([]);
+  const [savedAcc, setSavedAcc] = useState(null);
   const history = useHistory();
 
   //REDUX
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const users = Object.keys(localStorage);
-    users.forEach((key) => {
-      if (key.includes("user")) {
-        setSavedAcc([...savedAcc, JSON.parse(localStorage.getItem(key))]);
-      }
-    });
+    setSavedAcc(JSON.parse(localStorage.getItem("user")));
   }, []);
 
   const handleLogin = async (e) => {
@@ -49,10 +44,7 @@ export default function LoginForm({ functions, state }) {
           email: loginFill.email,
           password: loginFill.password,
         };
-        localStorage.setItem(
-          `user-${profile.firstName}`,
-          JSON.stringify(credentials)
-        );
+        localStorage.setItem(`user`, JSON.stringify(credentials));
         dispatch(selectUser(profile));
         await dashboardRedirect(profile.role, profile._id, history);
       }
@@ -74,10 +66,7 @@ export default function LoginForm({ functions, state }) {
         email: loginFill.email,
         password: loginFill.password,
       };
-      localStorage.setItem(
-        `user-${profile.firstName}`,
-        JSON.stringify(credentials)
-      );
+      localStorage.setItem(`user`, JSON.stringify(credentials));
       dispatch(selectUser(profile));
       await dashboardRedirect(profile.role, profile._id, history);
     }
@@ -96,20 +85,20 @@ export default function LoginForm({ functions, state }) {
     <div className="login-form" style={{ display: state.isForm ? "none" : "" }}>
       <div
         className="saved-account"
-        style={{ display: savedAcc.length > 0 ? "" : "none" }}
+        style={{ display: savedAcc !== null ? "" : "none" }}
       >
         <span>Recently logged as</span>
-        {savedAcc.length > 0 ? (
+        {savedAcc !== null ? (
           <button
             onClick={() =>
               reLogin({
-                email: savedAcc[savedAcc.length - 1].email,
-                password: savedAcc[savedAcc.length - 1].password,
+                email: savedAcc.email,
+                password: savedAcc.password,
               })
             }
           >
-            <img src={savedAcc[savedAcc.length - 1].profile} alt="" />
-            {savedAcc[savedAcc.length - 1].email}
+            <img src={savedAcc.profile} alt="" />
+            {savedAcc.email}
           </button>
         ) : null}
       </div>

@@ -17,7 +17,7 @@ export default function AddFileInput({ info, functions }) {
         onChange={(e) =>
           functions.setInfo({
             ...info.info,
-            profile: URL.createObjectURL(e.currentTarget.files[0]),
+            homework: URL.createObjectURL(e.currentTarget.files[0]),
           })
         }
       />
