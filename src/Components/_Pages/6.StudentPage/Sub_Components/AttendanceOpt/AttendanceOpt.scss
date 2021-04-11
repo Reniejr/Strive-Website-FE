@@ -1,1 +1,108 @@
 @import '../../Style';
+
+.attendance-opt{
+    border-color: #008dff;
+    color: rgba(255, 255, 255, .4);
+    @include flexBox(column, center, center);
+    &:hover{
+        color: #fff;
+        .bg-opt{
+            opacity: 1;
+            background: linear-gradient(129deg, rgba(0,0,0,1) 0%, rgba(48,48,48,1) 54%, rgba(4,4,4,1) 100%);
+        }
+        .logo-sub-opt{
+            opacity: .5;
+        }
+        .all-lessons{
+            opacity: 1;
+        }
+    }
+    .bg-opt{
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        @include transition(opacity 1s ease);
+        z-index: -1;
+    }
+    .logo-sub-opt{
+        width: 300px;
+        position: absolute;
+        bottom: -150px;
+        left: -100px;
+        opacity: 0;
+        @include transition(opacity 1s ease);
+    }
+    h6{
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        .presence{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            @include borderRadius(50%);
+            content: ' ';
+        }
+    }
+    .last-lesson{
+        width: 100%;
+        @include transition(margin-top .5s ease);
+        @include flexBox(row, space-between, center);
+        padding: 0 1.5rem;
+        z-index: 20;
+        .CircularProgressbar{
+            width: 100px;
+            height: 100px;
+            font-weight: 700;
+            display: inline-block;
+            order: 2;
+        }
+        .lesson-info{
+            order: 1;
+            @include flexBox(row, none, center);
+            .topic-day, .lesson-links{
+                p{
+                    font-size:.85rem;
+                    span{
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: $primary;
+                    }
+                }
+                p:nth-of-type(3){
+                    margin-bottom: 0;
+                }
+            }
+            .topic-day{
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    .all-lessons{
+        @include flexBox(column, center, center);
+        @include transition(opacity 1s ease);
+        width: 100%;
+        opacity: 0;
+        p{
+            font-size: .85rem;
+            font-weight: 700;
+        }
+        .attendance-list{
+            @include flexBox(row, center, center);
+            .attendance-span{
+                width: 30px;
+                height: 5px;
+                content: ' ';
+                display: inline-block;
+                margin-right: 1rem;
+                &:last-of-type{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

@@ -41,6 +41,9 @@
             .hw-opt{
                 border-color: $primary;
             }
+            .attendance-opt{
+                border-color: #008dff;
+            }
             .hw-opt, .attendance-opt{
                 &:hover{
                     .student-menu-opt-title{

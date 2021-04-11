@@ -77,12 +77,40 @@ export default function ClassroomInfo({ state }) {
             </li>
             {activeBatch.lessons.map((l, lI) => {
               return (
-                <li key={lI} onClick={() => setActiveDay(l)}>
-                  <span>
-                    Module: <span>{l.module}</span>
+                <li
+                  key={lI}
+                  onClick={() => setActiveDay(l)}
+                  style={{
+                    backgroundColor: activeDay === l ? "#00ff84" : "",
+                  }}
+                >
+                  <span
+                    style={{
+                      color: activeDay === l ? "black" : "",
+                    }}
+                  >
+                    Module:{" "}
+                    <span
+                      style={{
+                        color: activeDay === l ? "black" : "",
+                      }}
+                    >
+                      {l.module}
+                    </span>
                   </span>
-                  <span>
-                    Day: <span>{l.day}</span>
+                  <span
+                    style={{
+                      color: activeDay === l ? "black" : "",
+                    }}
+                  >
+                    Day:{" "}
+                    <span
+                      style={{
+                        color: activeDay === l ? "black" : "",
+                      }}
+                    >
+                      {l.day}
+                    </span>
                   </span>
                 </li>
               );
