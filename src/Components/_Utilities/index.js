@@ -157,3 +157,17 @@ export const getBenchmarkList = async () => {
   //   console.log("from utils", result);
   return result;
 };
+
+//DIVIDE BY CHUNKS
+export const chunkArray = (array, value) => {
+  let chunkContainer = [],
+    times = array.length / value,
+    arrayRest = array;
+  for (let i = 0; i < times; i++) {
+    let chunk = [];
+    chunk = arrayRest.splice(0, value);
+    chunkContainer.push(chunk);
+  }
+  console.log(chunkContainer);
+  return chunkContainer;
+};

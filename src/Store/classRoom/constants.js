@@ -1,0 +1,2 @@
+export const SET_ACTIVE_BATCH = "SET_ACTIVE_BATCH";
+export const SET_BATCH_LIST = "SET_BATCH_LIST";

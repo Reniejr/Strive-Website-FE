@@ -1,0 +1,32 @@
+@import '../Style';
+
+#students-list{
+    padding: 1rem;
+    h1{
+        color: $primary;
+    }
+    .container{
+        padding: 0;
+        height: 90%;
+        .row{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            .col-md-4{
+                height: 100%;
+                @include borderRadius(10px);
+                padding: 0;
+                border: 2px solid $primary;
+                background-color: #fff;
+                ul{
+                    padding: 0;
+                    list-style: none;
+                    li{
+                        padding: 5px 10px;
+                        border-bottom: 1px solid rgba($color: black, $alpha: .1);
+                    }
+                }
+            }
+        }
+    }
+}

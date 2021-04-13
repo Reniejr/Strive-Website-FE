@@ -1,7 +1,9 @@
 @import '../Style';
 
 .teacher-info{
+    background-color: #fff;
     .header{
+        z-index: 2;
         position: relative;
         padding: 2rem;
         @include flexBox(row, center, center);

@@ -21,11 +21,6 @@ export const sideBarValues = [
     icon: <StudentsI />,
   },
   {
-    id: "exam",
-    name: "Exam",
-    icon: <ExamI />,
-  },
-  {
     id: "logout",
     name: "Logout",
     icon: <LogoutI />,

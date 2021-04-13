@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 //REDUX IMPORTS
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setBatch, setBatchList } from "Store/classRoom/actions";
 
 //UTILITIES IMPORTS
 import { classRoomListFetch } from "Components/_Utilities";
@@ -22,6 +23,7 @@ import "./ClassRoomInfo.scss";
 
 export default function ClassroomInfo({ state }) {
   const userInfo = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
 
   const [classList, setClassList] = useState([]);
   const [activeBatch, setActiveBatch] = useState(activeBatchKeys);
@@ -37,11 +39,14 @@ export default function ClassroomInfo({ state }) {
       const lastBatch = list[list.length - 1];
       setActiveBatch(lastBatch);
       setActiveDay(lastBatch.lessons[lastBatch.lessons.length - 1]);
+      dispatch(setBatch(lastBatch));
+      dispatch(setBatchList(list));
     })();
   }, []);
 
   const changeBatch = (batch) => {
     setActiveBatch(batch);
+    dispatch(setBatch(batch));
     setActiveDay(batch.lessons[batch.lessons.length - 1]);
   };
 

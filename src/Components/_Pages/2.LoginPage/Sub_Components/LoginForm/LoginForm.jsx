@@ -36,6 +36,7 @@ export default function LoginForm({ functions, state }) {
   const handleLogin = async (e) => {
     if (e.keyCode === 13 || e.key === "Enter") {
       e.preventDefault();
+      functions.showLoader(true);
       const token = await loginFn(loginFill);
       const profile = await getProfile(token.access_token);
       if (profile) {
@@ -46,7 +47,10 @@ export default function LoginForm({ functions, state }) {
         };
         localStorage.setItem(`user`, JSON.stringify(credentials));
         dispatch(selectUser(profile));
-        await dashboardRedirect(profile.role, profile._id, history);
+        setTimeout(async () => {
+          await dashboardRedirect(profile.role, profile._id, history);
+          functions.showLoader(false);
+        }, 6500);
       }
     } else {
       let fill = { ...loginFill };
@@ -58,6 +62,7 @@ export default function LoginForm({ functions, state }) {
 
   const submitLogin = async (e) => {
     e.preventDefault();
+    functions.showLoader(true);
     const token = await loginFn(loginFill);
     const profile = await getProfile(token.access_token);
     if (profile) {
@@ -68,16 +73,23 @@ export default function LoginForm({ functions, state }) {
       };
       localStorage.setItem(`user`, JSON.stringify(credentials));
       dispatch(selectUser(profile));
-      await dashboardRedirect(profile.role, profile._id, history);
+      setTimeout(async () => {
+        await dashboardRedirect(profile.role, profile._id, history);
+        functions.showLoader(false);
+      }, 6500);
     }
   };
 
   const reLogin = async (credentials) => {
+    functions.showLoader(true);
     const token = await loginFn(credentials);
     const profile = await getProfile(token.access_token);
     if (profile) {
       dispatch(selectUser(profile));
-      await dashboardRedirect(profile.role, profile._id, history);
+      setTimeout(async () => {
+        await dashboardRedirect(profile.role, profile._id, history);
+        functions.showLoader(false);
+      }, 6500);
     }
   };
 
