@@ -24,7 +24,43 @@
                     li{
                         padding: 5px 10px;
                         border-bottom: 1px solid rgba($color: black, $alpha: .1);
+                        font-size: .8rem;
+                        font-weight: 700;
+                        color: $primary;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgba($color: black, $alpha: .1);
+                        }
+                        &:nth-of-type(1){
+                            background-color: black;
+                            cursor: default;
+                            border-top-left-radius: 10px;
+                            border-top-right-radius: 10px;
+                            span{
+                                color: white;
+                            }
+                            &:hover{
+                                background-color: black;
+                            }
+                        }
+                        span{
+                            font-size: 1rem;
+                            font-weight: 700;
+                            color: black;
+                            margin-left: .5rem;
+                        }
                     }
+                }
+            }
+            .col-md-8{
+                @include borderRadius(10px);
+                background-color: rgba($color: white, $alpha: .1);
+                backdrop-filter: blur(10px);
+                .no-result{
+                    font-size: 1.5rem;
+                    color: $primary;
+                    font-weight: 700;
+                    @include absoluteCentered();
                 }
             }
         }
