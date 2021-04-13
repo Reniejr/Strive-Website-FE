@@ -31,7 +31,7 @@ export default function TeacherPage() {
   useEffect(() => {
     (async () => {
       const isLog = await isLogged(userInfo);
-      console.log(isLog);
+      // console.log(isLog);
       setIsLog(isLog);
     })();
   }, [isLog]);

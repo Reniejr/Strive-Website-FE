@@ -36,7 +36,7 @@ export const getUser = async () => {
 export const classRoomListFetch = async () => {
   const response = await fetch(`${process.env.REACT_APP_BASE_URL}/batch`);
   const result = await response.json();
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
@@ -54,7 +54,7 @@ export const uploadProfile = async () => {
       }),
     }
   );
-  console.log(response);
+  // console.log(response);
   //   const result = await response.json();
   //   console.log(result);
 };
@@ -72,7 +72,7 @@ export const uploadFile = async (id, lesson) => {
       }),
     }
   );
-  console.log(response);
+  // console.log(response);
   //   const result = await response.json();
   //   console.log(result);
 };
@@ -129,7 +129,7 @@ export const newLesson = async (body, id) => {
     }
   );
   const result = await response.json();
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
@@ -145,7 +145,7 @@ export const createRoom = async (body) => {
     }
   );
   const result = await response.json();
-  console.log(result);
+  // console.log(result);
   return result;
 };
 //GET BENCHMARK LIST
@@ -168,6 +168,6 @@ export const chunkArray = (array, value) => {
     chunk = arrayRest.splice(0, value);
     chunkContainer.push(chunk);
   }
-  console.log(chunkContainer);
+  // console.log(chunkContainer);
   return chunkContainer;
 };

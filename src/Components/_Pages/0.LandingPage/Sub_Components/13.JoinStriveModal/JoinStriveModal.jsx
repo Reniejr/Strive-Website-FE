@@ -37,7 +37,7 @@ export default function JoinStriveModal({ state, functions }) {
       const list = await getBenchmarkList();
       const webList = list.filter((test) => test.course === "Web");
       const aiList = list.filter((test) => test.course === "AI");
-      console.log(list);
+      // console.log(list);
       if (webList.length > 0) {
         const latestWeb = webList[webList.length - 1];
         setWebTest(latestWeb._id);
@@ -61,9 +61,9 @@ export default function JoinStriveModal({ state, functions }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(test);
+    // console.log(test);
     let result = await getTest({ email }, test);
-    console.log(result);
+    // console.log(result);
     if (result.status === 200) {
       setSuccess(true);
       setTimeout(() => {

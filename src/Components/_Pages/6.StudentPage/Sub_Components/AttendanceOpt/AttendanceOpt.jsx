@@ -92,6 +92,7 @@ export default function AttendanceOpt() {
                 ? allLessons.slice(-5).map((l, lI) => {
                     return (
                       <div
+                        key={lI}
                         className="attendance-span"
                         style={{
                           backgroundColor: l.present ? "#00ff84" : "red",
@@ -102,6 +103,7 @@ export default function AttendanceOpt() {
                 : allLessons.map((l, lI) => {
                     return (
                       <div
+                        key={lI}
                         className="attendance-span"
                         style={{
                           backgroundColor: l.present ? "#00ff84" : "red",

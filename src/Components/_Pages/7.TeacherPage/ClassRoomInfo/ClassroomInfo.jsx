@@ -33,7 +33,6 @@ export default function ClassroomInfo({ state }) {
   useEffect(() => {
     (async () => {
       let list = await classRoomListFetch();
-      console.log(list);
       list = list.filter((batch) => batch.course === userInfo.course);
       setClassList(list);
       const lastBatch = list[list.length - 1];

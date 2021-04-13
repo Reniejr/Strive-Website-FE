@@ -54,7 +54,7 @@ export default function StartingPage(props) {
 
       //SOCKET
       setJoinRoom({ ...joinRoom, roomName: examDetails.roomName });
-      console.log(socket.id);
+      // console.log(socket.id);
     })();
   }, []);
 
@@ -62,7 +62,7 @@ export default function StartingPage(props) {
   useEffect(() => {
     if (connect) {
       socket.emit("joinRoom", joinRoom);
-      console.log("connected", joinRoom);
+      // console.log("connected", joinRoom);
       startTimer();
     }
   }, [connect]);

@@ -42,7 +42,7 @@ export default function AddDayForm({ state, functions }) {
           {lessonForm.slice(0, 2).map((l, lI) => {
             return (
               <Col xs={4}>
-                <Form.Group controlId={l.id}>
+                <Form.Group controlId={l.id} key={lI}>
                   <Form.Label>{l.label}</Form.Label>
                   <Form.Control
                     type={l.type}

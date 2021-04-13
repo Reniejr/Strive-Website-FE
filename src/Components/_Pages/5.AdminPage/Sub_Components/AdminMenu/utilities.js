@@ -14,7 +14,7 @@ export const getBatch = async (batchId) => {
     `${process.env.REACT_APP_BASE_URL}/batch/${batchId}`
   );
   const result = await response.json();
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
@@ -45,6 +45,6 @@ export const getTestsList = async () => {
     `${process.env.REACT_APP_SOCKET_BASE_URL}/socket-room`
   );
   const result = await response.json();
-  console.log(result);
+  // console.log(result);
   return result;
 };

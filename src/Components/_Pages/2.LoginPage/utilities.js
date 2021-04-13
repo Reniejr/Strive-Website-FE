@@ -60,7 +60,7 @@ export const getFirstAccessToken = async (body) => {
   );
   const result = await response.json();
   localStorage.setItem("access_token", result.access_token);
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
@@ -84,7 +84,7 @@ export const loginFn = async (bodyLogin) => {
     }
   );
   const result = await response.json();
-  console.log(result);
+  // console.log(result);
   localStorage.setItem("access_token", result.access_token);
   localStorage.setItem("refresh_token", result.refresh_token);
   return result;
@@ -101,7 +101,7 @@ export const getProfile = async (token) => {
     }
   );
   const result = await response.json();
-  console.log(result);
+  // console.log(result);
   return result;
 };
 

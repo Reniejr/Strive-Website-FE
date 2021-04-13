@@ -33,7 +33,6 @@ export default function LessonDetails({ state }) {
       Object.keys(info).forEach((key) => {
         newInfo[key] = state.day[key];
       });
-      console.log(newInfo);
       setInfo(newInfo);
     } else {
       setInfo(activeDayKeys);

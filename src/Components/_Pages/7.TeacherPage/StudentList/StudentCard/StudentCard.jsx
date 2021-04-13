@@ -11,7 +11,6 @@ export default function StudentCard({ state }) {
 
   useEffect(() => {
     setStudent(state.student);
-    console.log(state.student);
     setLastExam(
       state.student.studentInfo.exams[
         state.student.studentInfo.exams.length - 1
